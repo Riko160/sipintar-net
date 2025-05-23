@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kuis IPA - SiPintar Net</title>
+  <link rel="icon" type="image/png" href="/assets/img/karakter/logo3.png">
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+<link rel="stylesheet" href="assets/css/style.css">
+
+
+  <style>
+    /* Pop-up Style */
+    #popupResult {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .popup-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      width: 80%;
+      max-width: 400px;
+    }
+
+    .popup-content h2 {
+      margin-bottom: 20px;
+    }
+
+    .popup-content button {
+      padding: 10px 20px;
+      background-color: #4c83f1;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .popup-content button:hover {
+      background-color: #3a6bc8;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="/assets/img/karakter/logo3.png" alt="SiPintar Logo" class="logo">
+      <h2>SiPintar Net</h2>
+    </div>
+    <nav>
+      <a href="/index.html">Beranda</a>
+      <a href="/pages/materi/materi.html">Materi</a>
+      <a href="kuis.html">Kuis</a>
+      <a href="/pages/video.html">Video</a>
+      <a href="/pages/tentang.html">Tentang Kami</a>
+    </nav>
+  </header>
+
+  <section class="quiz-header">
+    <h1>Kuis Ilmu Pengetahuan Alam</h1>
+    <p>Uji pengetahuanmu tentang dunia sains dengan kuis seru ini!</p>
+  </section>
+
+  <div class="quiz-container">
+    <h2 class="quiz-title">Pilih Jawaban yang Benar!</h2>
+
+    <form id="quizForm">
+      <div class="question">
+        <h3><span class="question-number">1</span> Proses tumbuhan membuat makanan sendiri disebut...</h3>
+        <div class="options">
+          <label class="option">
+            <input type="radio" name="q1" value="a"> Respirasi
+          </label>
+          <label class="option">
+            <input type="radio" name="q1" value="b"> Fotosintesis
+          </label>
+          <label class="option">
+            <input type="radio" name="q1" value="c"> Evaporasi
+          </label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3><span class="question-number">2</span> Hewan yang berkembang biak dengan cara bertelur disebut...</h3>
+        <div class="options">
+          <label class="option">
+            <input type="radio" name="q2" value="a"> Vivipar
+          </label>
+          <label class="option">
+            <input type="radio" name="q2" value="b"> Ovipar
+          </label>
+          <label class="option">
+            <input type="radio" name="q2" value="c"> Ovovivipar
+          </label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3><span class="question-number">3</span> Sumber energi utama bagi bumi adalah...</h3>
+        <div class="options">
+          <label class="option">
+            <input type="radio" name="q3" value="a"> Bulan
+          </label>
+          <label class="option">
+            <input type="radio" name="q3" value="b"> Matahari
+          </label>
+          <label class="option">
+            <input type="radio" name="q3" value="c"> Bintang
+          </label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3><span class="question-number">4</span> Perubahan wujud dari cair menjadi gas disebut...</h3>
+        <div class="options">
+          <label class="option">
+            <input type="radio" name="q4" value="a"> Membeku
+          </label>
+          <label class="option">
+            <input type="radio" name="q4" value="b"> Mencair
+          </label>
+          <label class="option">
+            <input type="radio" name="q4" value="c"> Menguap
+          </label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3><span class="question-number">5</span> Bagian tumbuhan yang menyerap air dan mineral dari tanah adalah...</h3>
+        <div class="options">
+          <label class="option">
+            <input type="radio" name="q5" value="a"> Daun
+          </label>
+          <label class="option">
+            <input type="radio" name="q5" value="b"> Batang
+          </label>
+          <label class="option">
+            <input type="radio" name="q5" value="c"> Akar
+          </label>
+        </div>
+      </div>
+
+      <!-- Soal Tambahan -->
+      <div class="question">
+        <h3><span class="question-number">6</span> Apa nama proses perubahan wujud dari gas menjadi cair?</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q6" value="a"> Kondensasi</label>
+          <label class="option"><input type="radio" name="q6" value="b"> Sublimasi</label>
+          <label class="option"><input type="radio" name="q6" value="c"> Penguapan</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3><span class="question-number">7</span> Proses terjadinya air hujan disebut...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q7" value="a"> Evaporasi</label>
+          <label class="option"><input type="radio" name="q7" value="b"> Transpirasi</label>
+          <label class="option"><input type="radio" name="q7" value="c"> Kondensasi</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3><span class="question-number">8</span> Hewan yang hidup di air dan di darat disebut...</h3>
+        <div class="options">
+          <label class="option"><input type="radio" name="q8" value="a"> Mamalia</label>
+          <label class="option"><input type="radio" name="q8" value="b"> Amfibi</label>
+          <label class="option"><input type="radio" name="q8" value="c"> Reptil</label>
+        </div>
+      </div>
+
+      <button type="button" class="submit-btn" onclick="submitQuiz()">
+        <i class="fas fa-check-circle"></i> Periksa Jawaban
+      </button>
+    </form>
+  </div>
+
+  <!-- Pop-up Result -->
+  <div id="popupResult">
+    <div class="popup-content">
+      <h2>Hasil Kuis</h2>
+      <div id="popupMessage"></div>
+      <button onclick="closePopup()">Tutup</button>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 SiPintar Net - Belajar Jadi Asyik
+  </footer>
+
+  <script>
+    function submitQuiz() {
+      const answers = {
+        q1: "b", // Fotosintesis
+        q2: "b", // Ovipar
+        q3: "b", // Matahari
+        q4: "c", // Menguap
+        q5: "c", // Akar
+        q6: "a", // Kondensasi
+        q7: "c", // Kondensasi
+        q8: "b"  // Amfibi
+      };
+
+      let score = 0;
+      const form = document.forms["quizForm"];
+      for (let key in answers) {
+        const selectedOption = form.querySelector(`input[name="${key}"]:checked`);
+        if (selectedOption && selectedOption.value === answers[key]) {
+          score++;
+        }
+      }
+
+      let resultMessage = '';
+      if (score === Object.keys(answers).length) {
+        resultMessage = `<i class="fas fa-atom"></i> Hebat! Kamu benar semua (${score} dari ${Object.keys(answers).length})`;
+      } else if (score >= Object.keys(answers).length / 2) {
+        resultMessage = `<i class="fas fa-flask"></i> Bagus! Kamu benar ${score} dari ${Object.keys(answers).length} soal`;
+      } else {
+        resultMessage = `<i class="fas fa-microscope"></i> Kamu benar ${score} dari ${Object.keys(answers).length}. Yuk eksplorasi lagi!`;
+      }
+
+      document.getElementById("popupMessage").innerHTML = resultMessage;
+      document.getElementById("popupResult").style.display = "flex";
+    }
+
+    function closePopup() {
+      document.getElementById("popupResult").style.display = "none";
+    }
+  </script>
+</body>
+</html>
