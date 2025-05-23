@@ -80,7 +80,7 @@ nav a:hover {
 .hero {
   padding: 80px 40px;
   text-align: center;
-  background-image: url('/assets/img/karakter/hero1.png'), linear-gradient(to bottom, rgba(93, 156, 236, 0.7), rgba(93, 156, 236, 0.7));
+  background-image: url('../img/karakter/hero1.png'), linear-gradient(to bottom, rgba(93, 156, 236, 0.7), rgba(93, 156, 236, 0.7));
   background-size: cover;
   background-position: center center;
   color: rgb(243, 244, 245);
