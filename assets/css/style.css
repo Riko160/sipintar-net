@@ -377,11 +377,11 @@ nav a:hover {
 }
 
 .page-header.materi{
-  background-image: url('../img/karakter/hero1.png'), linear-gradient(to bottom, rgba(93, 156, 236, 0.7), rgba(93, 156, 236, 0.7));
+  background-image: url('../img/karakter/bg1.jpg'), linear-gradient(to bottom, rgba(93, 156, 236, 0.7), rgba(93, 156, 236, 0.7));
 }
 
 .page-header.kuis{
-  background-image: url('../img/karakter/hero1.png'), linear-gradient(to bottom, rgba(93, 156, 236, 0.7), rgba(93, 156, 236, 0.7));
+  background-image: url('../img/karakter/bg2.jpg'), linear-gradient(to bottom, rgba(93, 156, 236, 0.7), rgba(93, 156, 236, 0.7));
 }
 
 .page-header h1 {
