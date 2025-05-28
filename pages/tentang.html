@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tentang Kami - SiPintar Net</title>
-  <link rel="icon" type="image/png" href="/assets/img/karakter/logo3.png">
+  <link rel="icon" type="image/png" href="../assets/img/karakter/logo3.png">
   
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -13,7 +13,77 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <link rel="stylesheet" href="../assets/css/style.css">
+   <style>
+    .about-section {
+      background-color: #ffffff;
+      padding: 40px;
+      margin-bottom: 40px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
 
+    .about-section h2 {
+      margin-bottom: 20px;
+      color: #4c83f1;
+      font-size: 1.6em;
+    }
+
+    .team-members {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .team-member {
+      flex: 1 1 200px;
+      text-align: center;
+      background-color: #f8f9ff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .team-member:hover {
+      transform: translateY(-5px);
+    }
+
+    .member-photo {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .contact-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 8px 0;
+      font-size: 1.1em;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+
+    .contact-info i {
+      color: #4c83f1;
+      min-width: 20px;
+    }
+
+    .contact-info:hover {
+      color: #4c83f1;
+    }
+
+    .highlight-box {
+      background-color: #eaf0ff;
+      border-left: 6px solid #4c83f1;
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+  </style>
 
 </head>
 <body>
@@ -29,19 +99,20 @@
       <a href="../pages/video.html">Video</a>
       <a href="tentang.html">Tentang Kami</a>
     </nav>
-
   </header>
-
   <section class="page-header tentang">
     <h1>Tentang SiPintar Net</h1>
     <p>Platform pembelajaran inovatif yang membuat belajar menjadi menyenangkan untuk anak-anak SD</p>
   </section>
 
   <div class="about-container">
+
     <div class="about-section">
       <h2><i class="fas fa-lightbulb"></i> Visi & Misi</h2>
-      <p>SiPintar Net hadir dengan visi untuk menciptakan generasi muda Indonesia yang cerdas dan kreatif melalui metode pembelajaran yang menyenangkan dan interaktif.</p>
-      <p>Misi kami adalah menyediakan konten edukasi berkualitas tinggi yang mudah diakses oleh semua anak SD di Indonesia, membantu mereka memahami konsep dasar dengan cara yang lebih menarik melalui teknologi digital.</p>
+      <div class="highlight-box">
+        <p><strong>Visi:</strong> Menciptakan generasi muda Indonesia yang cerdas dan kreatif melalui metode pembelajaran yang menyenangkan dan interaktif.</p>
+        <p><strong>Misi:</strong> Menyediakan konten edukasi berkualitas tinggi yang mudah diakses oleh semua anak SD di Indonesia, membantu mereka memahami konsep dasar dengan cara yang lebih menarik melalui teknologi digital.</p>
+      </div>
     </div>
 
     <div class="about-section">
@@ -54,7 +125,6 @@
         <li><i class="fas fa-check-circle" style="color: #4c83f1; margin-right: 10px;"></i> Konten sesuai kurikulum sekolah dasar</li>
       </ul>
     </div>
-
     <div class="about-section">
       <h2><i class="fas fa-users"></i> Tim Kami</h2>
       <p>SiPintar Net dikembangkan oleh tim yang berdedikasi di bidang pendidikan dan teknologi:</p>
@@ -100,7 +170,6 @@
     <div class="about-section">
       <h2><i class="fas fa-envelope"></i> Hubungi Kami</h2>
       <p>Kami selalu terbuka untuk saran, masukan, dan kerjasama:</p>
-      
       <div style="margin-top: 20px;">
         <div class="contact-info">
           <i class="fas fa-envelope"></i>

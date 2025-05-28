@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Video Kartun - SiPintar Net</title>
-  <link rel="icon" type="image/png" href="/assets/img/karakter/logo3.png">
+  <link rel="icon" type="image/png" href="../assets/img/karakter/logo3.png">
   
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -14,11 +14,111 @@
   
   <link rel="stylesheet" href="../assets/css/style.css">
 
+  <style>
+    .filter-buttons {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
+    .filter-buttons button {
+      background-color: #4c83f1;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .filter-buttons button.active,
+    .filter-buttons button:hover {
+      background-color: #345ec0;
+    }
+
+    .videos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .video-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      max-width: 320px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .video-thumbnail iframe {
+      width: 100%;
+      height: 180px;
+      border: none;
+    }
+
+    .video-info {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .watch-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #4c83f1;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .watch-btn:hover {
+      background-color: #345ec0;
+    }
+
+        .video-filter-section {
+      background-color: #f0f4ff;
+      padding: 30px;
+      border-radius: 16px;
+      max-width: 960px;
+      margin: 0 auto 40px auto;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(167, 164, 164, 0.05);
+    }
+
+    .video-section-title {
+      font-size: 26px;
+      font-weight: 700;
+      color: #6280d1;
+      margin-bottom: 20px;
+    }
+
+    .filter-description {
+      font-size: 17px;
+      color: #444;
+      margin-bottom: 18px;
+      background-color: #e9f0ff;
+      padding: 12px 20px;
+      border-left: 6px solid #4c83f1;
+      border-radius: 8px;
+      font-weight: 500;
+      font-style: italic;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      display: inline-block;
+    }
+  </style>
 </head>
 <body>
   <header>
-      <div class="logo-container">
+    <div class="logo-container">
       <img src="../assets/img/karakter/logo3.png" alt="SiPintar Logo" class="logo">
       <h2>SiPintar Net</h2>
     </div>
@@ -29,7 +129,6 @@
       <a href="video.html">Video</a>
       <a href="../pages/tentang.html">Tentang Kami</a>
     </nav>
-
   </header>
 
   <section class="page-header video">
@@ -37,12 +136,23 @@
     <p>Belajar sambil bermain melalui video animasi yang menyenangkan dan mendidik</p>
   </section>
 
+  <section class="video-filter-section">
+  <p class="filter-description"><i class="fas fa-magic" style="color:#4c83f1;"></i> Pilih kategori video di bawah ini untuk belajar dengan cara yang menyenangkan!</p>
+  <div class="filter-buttons">
+    <!-- tombol filter -->
+    <button class="active" data-filter="all">Semua</button>
+    <button data-filter="bahasa">Bahasa</button>
+    <button data-filter="ipa">IPA</button>
+    <button data-filter="moral">Moral</button>
+  </div>
+</section>
+
   <section class="videos-container">
-    <h2>Koleksi Video Pembelajaran</h2>
+    <h2 class="video-section-title">Eksplorasi Video Edukatif Kami</h2>
     <div class="videos">
-      <div class="video-card">
+      <div class="video-card" data-kategori="bahasa">
         <div class="video-thumbnail">
-          <iframe src="https://www.youtube.com/embed/ND1QoJQAmyM?si=ZDfGSipuPXHhRL6W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/ND1QoJQAmyM?si=ZDfGSipuPXHhRL6W" allowfullscreen></iframe>
         </div>
         <div class="video-info">
           <h3>Belajar Huruf & Angka</h3>
@@ -52,10 +162,10 @@
           </a>
         </div>
       </div>
-      
-      <div class="video-card">
+
+      <div class="video-card" data-kategori="ipa">
         <div class="video-thumbnail">
-          <iframe src="https://www.youtube.com/embed/2EgP_zSOKN4?si=_luPoYvNiH2PnI-K" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/2EgP_zSOKN4?si=_luPoYvNiH2PnI-K" allowfullscreen></iframe>
         </div>
         <div class="video-info">
           <h3>Animasi Sains Dasar</h3>
@@ -65,10 +175,10 @@
           </a>
         </div>
       </div>
-      
-      <div class="video-card">
+
+      <div class="video-card" data-kategori="moral">
         <div class="video-thumbnail">
-          <iframe src="https://www.youtube.com/embed/P-TtJQ6sD_U?si=UCp9ay26NZEHIejl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/P-TtJQ6sD_U?si=UCp9ay26NZEHIejl" allowfullscreen></iframe>
         </div>
         <div class="video-info">
           <h3>Kartun Cerita Moral</h3>
@@ -84,5 +194,28 @@
   <footer>
     &copy; 2025 SiPintar Net - Belajar Jadi Asyik
   </footer>
+
+  <script>
+    const filterButtons = document.querySelectorAll('.filter-buttons button');
+    const videoCards = document.querySelectorAll('.video-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
+
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        videoCards.forEach(card => {
+          const kategori = card.getAttribute('data-kategori');
+          if (filter === 'all' || kategori === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
