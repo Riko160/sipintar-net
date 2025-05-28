@@ -18,43 +18,63 @@
     .filter-buttons {
       display: flex;
       justify-content: center;
-      margin: 20px 0;
       flex-wrap: wrap;
       gap: 10px;
+      margin-top: 15px;
+      margin-bottom: 25px;
     }
 
     .filter-buttons button {
-      background-color: #4c83f1;
-      color: white;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 8px;
+      background-color: #fff;
+      color: #4c83f1;
+      border: 2px solid #4c83f1;
+      padding: 8px 20px;
+      border-radius: 999px;
       cursor: pointer;
       font-family: 'Nunito', sans-serif;
       font-weight: 600;
-      transition: background-color 0.3s ease;
+      font-size: 15px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
     }
 
     .filter-buttons button.active,
     .filter-buttons button:hover {
-      background-color: #345ec0;
-    }
-
-    .videos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
+      background-color: #4c83f1;
+      color: #fff;
+      transform: scale(1.05);
     }
 
     .video-card {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-      overflow: hidden;
-      max-width: 320px;
-      display: flex;
-      flex-direction: column;
+      opacity: 1;
+      transform: scale(1);
+      visibility: visible;
+      transition: all 0.3s ease;
+    }
+
+    .video-card.hidden {
+      opacity: 0;
+      transform: scale(0.95);
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .video-card.show {
+      opacity: 1;
+      transform: scale(1);
+      visibility: visible;
+      animation: fadeInScale 0.4s ease;
+    }
+
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
 
     .video-thumbnail iframe {
@@ -114,6 +134,7 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
       display: inline-block;
     }
+
   </style>
 </head>
 <body>
@@ -195,9 +216,9 @@
     &copy; 2025 SiPintar Net - Belajar Jadi Asyik
   </footer>
 
-  <script>
-    const filterButtons = document.querySelectorAll('.filter-buttons button');
-    const videoCards = document.querySelectorAll('.video-card');
+<script>
+  const filterButtons = document.querySelectorAll('.filter-buttons button');
+  const videoCards = document.querySelectorAll('.video-card');
 
     filterButtons.forEach(button => {
       button.addEventListener('click', () => {
@@ -208,14 +229,20 @@
 
         videoCards.forEach(card => {
           const kategori = card.getAttribute('data-kategori');
+
           if (filter === 'all' || kategori === filter) {
-            card.style.display = 'flex';
+            card.classList.remove('hidden');
+            card.classList.add('show');
           } else {
-            card.style.display = 'none';
+            card.classList.remove('show');
+            card.classList.add('hidden');
           }
         });
       });
     });
-  </script>
+
+
+</script>
+
 </body>
 </html>
