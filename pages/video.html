@@ -45,13 +45,21 @@
       transform: scale(1.05);
     }
 
-    .video-card {
-      opacity: 1;
-      transform: scale(1);
-      visibility: visible;
-      transition: all 0.3s ease;
+    .videos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
     }
 
+    .video-card {
+      width: 300px;
+      background-color: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
     .video-card.hidden {
       opacity: 0;
       transform: scale(0.95);
@@ -171,6 +179,7 @@
   <section class="videos-container">
     <h2 class="video-section-title">Eksplorasi Video Edukatif Kami</h2>
     <div class="videos">
+      <!-- Video Bahasa -->
       <div class="video-card" data-kategori="bahasa">
         <div class="video-thumbnail">
           <iframe src="https://www.youtube.com/embed/ND1QoJQAmyM?si=ZDfGSipuPXHhRL6W" allowfullscreen></iframe>
@@ -184,6 +193,20 @@
         </div>
       </div>
 
+      <div class="video-card" data-kategori="bahasa">
+        <div class="video-thumbnail">
+          <iframe src="https://www.youtube.com/embed/sLRnGFVQVFY?si=n01llyE5nyTlY2Av" allowfullscreen></iframe>
+        </div>
+        <div class="video-info">
+          <h3>Lagu ABC</h3>
+          <p>Video edukatif untuk mengenal huruf dengan nyanyian yang seru.</p>
+          <a href="https://www.youtube.com/embed/sLRnGFVQVFY?si=n01llyE5nyTlY2Av" class="watch-btn" target="_blank">
+            <i class="fas fa-play"></i> Tonton Sekarang
+          </a>
+        </div>
+      </div>
+
+      <!-- Video IPA -->
       <div class="video-card" data-kategori="ipa">
         <div class="video-thumbnail">
           <iframe src="https://www.youtube.com/embed/2EgP_zSOKN4?si=_luPoYvNiH2PnI-K" allowfullscreen></iframe>
@@ -197,6 +220,7 @@
         </div>
       </div>
 
+      <!-- Video Moral -->
       <div class="video-card" data-kategori="moral">
         <div class="video-thumbnail">
           <iframe src="https://www.youtube.com/embed/P-TtJQ6sD_U?si=UCp9ay26NZEHIejl" allowfullscreen></iframe>
@@ -210,6 +234,7 @@
         </div>
       </div>
     </div>
+
   </section>
 
   <footer>
