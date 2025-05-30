@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kuis Bahasa Indonesia Kelas 1 - SiPintar Net</title>
+  <link rel="icon" type="image/png" href="../../../assets/img/karakter/logo3.png">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    /* CSS untuk breadcrumb (konsisten) */
+    .breadcrumb-container {
+        padding: 15px 0;
+        margin-bottom: 10px;
+        font-size: 0.95em;
+        border-bottom: 1px solid #eee;
+    }
+    .breadcrumb-container a {
+        text-decoration: none;
+        color: #007bff;
+    }
+    .breadcrumb-container a:hover {
+        text-decoration: underline;
+    }
+    .breadcrumb-container span {
+        color: #6c757d;
+    }
+
+    /* Gaya untuk Kuis */
+    .quiz-page-header {
+        padding: 30px 20px;
+        text-align: center;
+        margin-bottom: 30px;
+        background-color: #e7f5ff; /* Latar biru muda, konsisten dengan mapel Bahasa */
+        border-bottom: 3px solid #007bff; /* Aksen biru */
+    }
+    .quiz-page-header h1 {
+        color: #007bff; /* Biru */
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 2em;
+    }
+    .quiz-page-header p {
+        font-size: 1.1em;
+        color: #555;
+    }
+    .quiz-container {
+        background-color: #fff;
+        padding: 25px 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        max-width: 800px;
+        margin: 0 auto 30px auto;
+    }
+    .quiz-title {
+        text-align: center;
+        color: #333;
+        font-size: 1.5em;
+        margin-bottom: 25px;
+        font-weight: 600;
+    }
+    .question {
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px dashed #ddd;
+    }
+    .question:last-of-type {
+        border-bottom: none;
+        margin-bottom: 20px;
+    }
+    .question h3 {
+        font-size: 1.2em;
+        color: #444;
+        margin-bottom: 15px;
+        line-height: 1.5;
+    }
+    .question-number {
+        background-color: #007bff; /* Biru */
+        color: white;
+        padding: 3px 8px;
+        border-radius: 50%;
+        margin-right: 10px;
+        font-size: 0.9em;
+    }
+    .options {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .option {
+        display: block;
+        background-color: #f8f9fa;
+        padding: 12px 15px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #e0e0e0;
+    }
+    .option:hover {
+        background-color: #e9ecef;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .option input[type="radio"] {
+        margin-right: 10px;
+        transform: scale(1.2);
+    }
+    .submit-btn {
+        display: block;
+        width: auto; 
+        padding: 12px 30px;
+        background-color: #28a745; 
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1.1em;
+        font-weight: 600;
+        margin: 30px auto 0 auto; 
+        transition: background-color 0.3s ease;
+    }
+    .submit-btn:hover {
+        background-color: #218838;
+    }
+    .submit-btn i {
+        margin-right: 8px;
+    }
+    #popupResult {
+      display: none; 
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 1000;
+      display: flex; 
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+    }
+    #popupResult.show {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.3s ease;
+    }
+    .popup-content {
+      background-color: white;
+      padding: 30px; 
+      border-radius: 12px;
+      text-align: center;
+      width: 90%;
+      max-width: 450px; 
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+    }
+    #popupResult.show .popup-content {
+        transform: scale(1);
+    }
+    .popup-content h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #007bff; /* Biru */
+      font-family: 'Baloo 2', cursive; 
+      font-size: 1.8em;
+    }
+    #popupMessage {
+        font-size: 1.2em; 
+        color: #333;
+        margin-bottom: 25px;
+    }
+    #popupMessage .fas { 
+        margin-right: 10px;
+        font-size: 1.3em;
+    }
+    #popupMessage .fa-star { color:gold; } 
+    #popupMessage .fa-check-circle { color: #28a745; }
+    #popupMessage .fa-thumbs-up { color: #ffc107; }
+    #popupMessage .fa-sad-tear { color: #dc3545; }
+    .popup-content button, .popup-content .button-kembali {
+      padding: 12px 20px; 
+      background-color: #007bff; 
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: 600;
+      text-decoration: none; 
+      transition: background-color 0.3s ease;
+      margin: 5px; 
+    }
+    .popup-content button:hover, .popup-content .button-kembali:hover {
+      background-color: #0056b3;
+    }
+    .popup-content .button-kembali { 
+        background-color: #6c757d;
+    }
+    .popup-content .button-kembali:hover {
+        background-color: #5a6268;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="../../../assets/img/karakter/logo3.png" alt="SiPintar Logo" class="logo">
+      <h2>SiPintar Net</h2>
+    </div>
+    <nav>
+      <a href="../../../index.html">Beranda</a>
+      <a href="../../materi/materi.html">Materi</a>
+      <a href="../kuis.html" class="active">Kuis</a> 
+      <a href="../../video.html">Video</a>
+      <a href="../../tentang.html">Tentang Kami</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb-container">
+      <a href="../kuis.html">Pilih Mata Pelajaran Kuis</a> &nbsp;&gt;&nbsp; 
+      <a href="pilih-kelas-bahasa.html">Bahasa Indonesia</a> &nbsp;&gt;&nbsp; <span>Kelas 1 - Kuis Dasar</span>
+    </div>
+
+    <section class="quiz-page-header">
+      <h1>Kuis Dasar Bahasa Indonesia Kelas 1</h1>
+      <p>Ayo, tunjukkan kemampuanmu mengenal huruf, kata, dan sapaan!</p>
+    </section>
+
+    <div class="quiz-container">
+      <h2 class="quiz-title">Pilih Jawaban yang Paling Tepat!</h2>
+
+      <form id="quizFormK1Bahasa"> <div class="question">
+          <h3><span class="question-number">1</span> Saat berkenalan dengan teman baru, kita sebaiknya menyebutkan...</h3>
+          <div class="options">
+            <label class="option"><input type="radio" name="q1" value="a"> Makanan kesukaan</label>
+            <label class="option"><input type="radio" name="q1" value="b"> Nama panggilan</label>
+            <label class="option"><input type="radio" name="q1" value="c"> Warna baju</label>
+          </div>
+        </div>
+
+        <div class="question">
+          <h3><span class="question-number">2</span> Huruf 'a', 'i', 'u', 'e', 'o' disebut juga dengan huruf...</h3>
+          <div class="options">
+            <label class="option"><input type="radio" name="q2" value="a"> Konsonan</label>
+            <label class="option"><input type="radio" name="q2" value="b"> Vokal</label>
+            <label class="option"><input type="radio" name="q2" value="c"> Angka</label>
+          </div>
+        </div>
+        
+        <div class="question">
+          <h3><span class="question-number">3</span> Manakah di bawah ini yang termasuk huruf konsonan?</h3>
+          <div class="options">
+            <label class="option"><input type="radio" name="q3" value="a"> a</label>
+            <label class="option"><input type="radio" name="q3" value="b"> m</label>
+            <label class="option"><input type="radio" name="q3" value="c"> u</label>
+          </div>
+        </div>
+
+        <div class="question">
+          <h3><span class="question-number">4</span> Suku kata 'ma' jika digabung dengan suku kata 'ta' akan menjadi kata...</h3>
+          <div class="options">
+            <label class="option"><input type="radio" name="q4" value="a"> Tama</label>
+            <label class="option"><input type="radio" name="q4" value="b"> Mata</label>
+            <label class="option"><input type="radio" name="q4" value="c"> Amat</label>
+          </div>
+        </div>
+
+        <div class="question">
+          <h3><span class="question-number">5</span> Kata 'kursi' diawali dengan huruf...</h3>
+          <div class="options">
+            <label class="option"><input type="radio" name="q5" value="a"> s</label>
+            <label class="option"><input type="radio" name="q5" value="b"> r</label>
+            <label class="option"><input type="radio" name="q5" value="c"> k</label>
+          </div>
+        </div>
+        
+        <div class="question">
+          <h3><span class="question-number">6</span> Jika kamu bertemu dengan Ibu Guru di sekolah pada pagi hari, ucapan sapaan yang benar adalah...</h3>
+          <div class="options">
+            <label class="option"><input type="radio" name="q6" value="a"> Selamat siang, Bu Guru!</label>
+            <label class="option"><input type="radio" name="q6" value="b"> Selamat pagi, Bu Guru!</label>
+            <label class="option"><input type="radio" name="q6" value="c"> Selamat malam, Bu Guru!</label>
+          </div>
+        </div>
+
+        <button type="button" class="submit-btn" onclick="submitQuizK1Bahasa()">
+          <i class="fas fa-check-circle"></i> Selesai & Periksa Jawaban
+        </button>
+      </form>
+    </div>
+  </main>
+  
+  <div id="popupResult">
+    <div class="popup-content">
+      <h2>Hasil Kuis Kamu!</h2>
+      <div id="popupMessage"></div>
+      <div style="margin-top: 20px;">
+        <button onclick="ulangiKuisK1Bahasa()" style="margin-right: 10px;"><i class="fas fa-redo"></i> Ulangi Kuis</button>
+        <a href="pilih-kelas-bahasa.html" class="button-kembali"> <i class="fas fa-list-ul"></i> Pilih Kuis Lain
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 SiPintar Net - Belajar Jadi Asyik
+  </footer>
+
+  <script>
+    const bankSoalK1Bahasa = [ // Nama variabel diubah
+        { soal: "q1", jawaban: "b" }, // Nama panggilan
+        { soal: "q2", jawaban: "b" }, // Vokal
+        { soal: "q3", jawaban: "b" }, // m
+        { soal: "q4", jawaban: "b" }, // Mata
+        { soal: "q5", jawaban: "c" }, // k
+        { soal: "q6", jawaban: "b" }  // Selamat pagi, Bu Guru!
+    ];
+
+    function submitQuizK1Bahasa() { // Nama fungsi diubah
+      let score = 0;
+      const form = document.getElementById("quizFormK1Bahasa"); // ID form disesuaikan
+      
+      bankSoalK1Bahasa.forEach(item => {
+        const selectedOption = form.querySelector(`input[name="${item.soal}"]:checked`);
+        if (selectedOption && selectedOption.value === item.jawaban) {
+          score++;
+        }
+      });
+
+      let totalSoal = bankSoalK1Bahasa.length;
+      let resultMessage = '';
+      let iconClass = '';
+
+      if (score === totalSoal) {
+        resultMessage = `Hebat! Kamu benar semua (${score} dari ${totalSoal}). Kamu Pintar Berbahasa! <i class="fas fa-star"></i>`;
+        iconClass = 'fas fa-check-circle';
+      } else if (score >= totalSoal * 0.7) {
+        resultMessage = `Bagus Sekali! Kamu benar ${score} dari ${totalSoal} soal. Terus berlatih, ya!`;
+        iconClass = 'fas fa-thumbs-up';
+      } else if (score >= totalSoal * 0.4) {
+         resultMessage = `Lumayan! Kamu benar ${score} dari ${totalSoal} soal. Ayo belajar lagi agar makin pintar!`;
+         iconClass = 'fas fa-lightbulb';
+      }
+      else {
+        resultMessage = `Kamu benar ${score} dari ${totalSoal} soal. Jangan sedih, coba lagi dan pasti bisa!`;
+        iconClass = 'fas fa-sad-tear';
+      }
+
+      document.getElementById("popupMessage").innerHTML = `<i class="${iconClass}"></i> ${resultMessage}`;
+      
+      const popupElement = document.getElementById("popupResult");
+      popupElement.style.display = "flex"; 
+      setTimeout(() => { 
+          popupElement.classList.add('show');
+      }, 10);
+    }
+
+    function closePopupK1Bahasa() { // Nama fungsi diubah
+      const popupElement = document.getElementById("popupResult");
+      popupElement.classList.remove('show');
+      setTimeout(() => {
+          popupElement.style.display = "none";
+      }, 300);
+    }
+
+    function ulangiKuisK1Bahasa() { // Nama fungsi diubah
+        closePopupK1Bahasa(); 
+        document.getElementById("quizFormK1Bahasa").reset(); 
+    }
+  </script>
+</body>
+</html>

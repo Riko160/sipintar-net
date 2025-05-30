@@ -1,73 +1,60 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kuis Edukatif - SiPintar Net</title>
-  <link rel="icon" type="image/png" href="/assets/img/karakter/logo3.png">
+  <link rel="icon" type="image/png" href="../../assets/img/karakter/logo3.png"> <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
   
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+  
   <link rel="stylesheet" href="../../assets/css/style.css">
-
-
-
-</head>
+  </head>
 <body>
   <header>
-        <div class="logo-container">
+    <div class="logo-container">
       <img src="../../assets/img/karakter/logo3.png" alt="SiPintar Logo" class="logo">
       <h2>SiPintar Net</h2>
     </div>
     <nav>
       <a href="../../index.html">Beranda</a>
       <a href="../materi/materi.html">Materi</a>
-      <a href="kuis.html">Kuis</a>
-      <a href="../video.html">Video</a>
+      <a href="kuis.html" class="active">Kuis</a> <a href="../video.html">Video</a>
       <a href="../tentang.html">Tentang Kami</a>
     </nav>
   </header>
-  <section class="page-header kuis">
-    <h1>Kuis Edukatif</h1>
-    <p>Uji pengetahuanmu dengan kuis-kuis seru yang akan membuat belajar lebih menyenangkan!</p>
-  </section>
 
-  <section class="quizzes-container">
-    <h2>Pilih Kuis</h2>
-    <div class="quizzes">
-      <a href="kuis-mtk.html" class="quiz-card">
-        <div class="quiz-icon">
-          <i class="fas fa-calculator"></i>
-        </div>
-        <h3>Kuis Matematika</h3>
-        <p>Uji kemampuan berhitungmu dengan soal-soal interaktif dan menyenangkan!</p>
-        <div class="start-btn">Mulai Kuis</div>
-      </a>
-      
-      <a href="kuis-bahasa.html" class="quiz-card">
-        <div class="quiz-icon">
-          <i class="fas fa-book-open"></i>
-        </div>
-        <h3>Kuis Bahasa</h3>
-        <p>Latihan kosa kata, sinonim-antonim, dan pemahaman teks bacaan dengan kuis interaktif.</p>
-        <div class="start-btn">Mulai Kuis</div>
-      </a>
-      
-      <a href="kuis-ipa.html" class="quiz-card">
-        <div class="quiz-icon">
-          <i class="fas fa-flask"></i>
-        </div>
-        <h3>Kuis IPA</h3>
-        <p>Tantang dirimu mengenal makhluk hidup, benda, dan alam sekitar lewat pertanyaan seru.</p>
-        <div class="start-btn">Mulai Kuis</div>
-      </a>
-    </div>
-  </section>
+  <main> <section class="page-header kuis">
+      <h1>Kuis Edukatif SiPintar</h1> <p>Uji pengetahuanmu dengan kuis-kuis seru yang akan membuat belajar lebih menyenangkan!</p>
+    </section>
+
+    <section class="quizzes-container container"> <h2>Pilih Mata Pelajaran Kuis</h2>
+      <div class="quizzes">
+        <a href="matematika/pilih-kelas-mtk.html" class="quiz-card">
+          <div class="quiz-icon">
+            <i class="fas fa-calculator"></i>
+          </div>
+          <h3>Kuis Matematika</h3>
+          <p>Uji kemampuan berhitungmu dengan soal-soal interaktif dan menyenangkan!</p>
+          <div class="start-btn">Pilih Kelas</div> </a>
+        
+        <a href="bahasa/pilih-kelas-bahasa.html" class="quiz-card">
+          <div class="quiz-icon">
+            <i class="fas fa-book-open"></i>
+          </div>
+          <h3>Kuis Bahasa Indonesia</h3> <p>Latihan kosa kata, ejaan, dan pemahaman teks bacaan dengan kuis interaktif.</p>
+          <div class="start-btn">Pilih Kelas</div> </a>
+        
+        <a href="ipa/pilih-kelas-ipa.html" class="quiz-card">
+          <div class="quiz-icon">
+            <i class="fas fa-flask"></i>
+          </div>
+          <h3>Kuis IPA</h3>
+          <p>Tantang dirimu mengenal makhluk hidup, benda, dan alam sekitar lewat pertanyaan seru.</p>
+          <div class="start-btn">Pilih Kelas</div> </a>
+      </div>
+    </section>
+  </main>
 
   <footer>
     &copy; 2025 SiPintar Net - Belajar Jadi Asyik
