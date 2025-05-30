@@ -6,186 +6,304 @@
   <title>Tentang Kami - SiPintar Net</title>
   <link rel="icon" type="image/png" href="../assets/img/karakter/logo3.png">
   
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
   
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <link rel="stylesheet" href="../assets/css/style.css">
-   <style>
+  <style>
+    /* CATATAN: Idealnya, semua CSS di bawah ini dipindahkan ke file ../assets/css/style.css Anda */
+    
+    /* .page-header.tentang akan mengambil gaya dari style.css utama Anda. */
+    /* Jika .page-header di style.css Anda tidak memiliki background-color atau padding horizontal yang cukup, */
+    /* Anda mungkin perlu menambahkannya agar terlihat bagus saat full-width. */
+    /* Contoh (jika belum ada di style.css Anda): */
+    /*
+    .page-header.tentang {
+        background-color: #4c83f1; // Contoh warna biru
+        color: white;
+        padding: 40px 5%; // Padding atas-bawah dan kiri-kanan (persentase untuk responsif)
+        text-align: center;
+    }
+    .page-header.tentang h1 {
+        margin-top: 0;
+        font-size: 2.2em;
+    }
+    .page-header.tentang p {
+        font-size: 1.1em;
+        opacity: 0.9;
+    }
+    */
+
     .about-section {
       background-color: #ffffff;
-      padding: 40px;
-      margin-bottom: 40px;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      padding: 30px 40px; 
+      margin-bottom: 30px; 
+      border-radius: 12px; 
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08); 
     }
 
     .about-section h2 {
-      margin-bottom: 20px;
-      color: #4c83f1;
-      font-size: 1.6em;
-    }
-
-    .team-members {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      margin-top: 20px;
-    }
-
-    .team-member {
-      flex: 1 1 200px;
-      text-align: center;
-      background-color: #f8f9ff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
-    }
-
-    .team-member:hover {
-      transform: translateY(-5px);
-    }
-
-    .member-photo {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 10px;
-    }
-
-    .contact-info {
-      display: flex;
+      display: flex; 
       align-items: center;
-      gap: 10px;
-      margin: 8px 0;
-      font-size: 1.1em;
-      color: #333;
-      transition: color 0.3s ease;
+      margin-bottom: 25px;
+      color: #4c83f1; 
+      font-size: 1.8em; 
+      border-bottom: 2px solid #e0e6f1; 
+      padding-bottom: 10px;
     }
-
-    .contact-info i {
-      color: #4c83f1;
-      min-width: 20px;
-    }
-
-    .contact-info:hover {
-      color: #4c83f1;
+    .about-section h2 .fas { 
+        margin-right: 12px;
+        font-size: 0.9em; 
     }
 
     .highlight-box {
       background-color: #eaf0ff;
       border-left: 6px solid #4c83f1;
-      padding: 20px;
-      border-radius: 12px;
+      padding: 20px 25px;
+      border-radius: 8px; 
       margin-top: 20px;
+    }
+    .highlight-box p {
+        margin-bottom: 10px; 
+    }
+    .highlight-box strong {
+        color: #3b73d9; 
+        font-weight: 600;
+    }
+    .highlight-box h4 { /* Tambahan untuk judul Visi/Misi di highlight-box */
+        color: #3b73d9;
+        font-size: 1.2em;
+        margin-top: 0;
+        margin-bottom: 8px;
+    }
+
+
+    /* Metode Pembelajaran */
+    .metode-list {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 20px 0;
+    }
+    .metode-list-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 1.05em; 
+    }
+    .metode-list-icon {
+      color: #4c83f1;
+      margin-right: 12px;
+      font-size: 1.2em;
+      width: 25px;
+      text-align: center;
+    }
+
+    /* Tim Kami */
+    .team-members {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px; 
+      margin-top: 20px;
+      justify-content: center; 
+    }
+
+    .team-member {
+      flex: 1 1 220px; 
+      max-width: 250px; 
+      text-align: center;
+      background-color: #f8f9ff;
+      padding: 25px 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .team-member:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+
+    .member-photo {
+      width: 120px; 
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px; 
+      border: 3px solid #dbe4ff; 
+    }
+    .member-name { 
+        font-size: 1.2em;
+        color: #333;
+        margin-bottom: 5px;
+    }
+    .member-id, .member-program { 
+        font-size: 0.9em;
+        color: #555;
+        margin-bottom: 3px;
+    }
+    .member-id strong {
+        font-weight: 600;
+    }
+
+    /* Hubungi Kami */
+    .contact-info-container {
+        margin-top: 20px;
+    }
+    .contact-info {
+      display: flex;
+      align-items: center;
+      gap: 12px; 
+      margin: 10px 0; 
+      font-size: 1.05em; 
+      color: #333;
+    }
+    .contact-info a { 
+        text-decoration: none;
+        color: inherit; 
+        transition: color 0.3s ease;
+    }
+    .contact-info a:hover {
+      color: #4c83f1; 
+    }
+    .contact-info i {
+      color: #4c83f1;
+      font-size: 1.3em; 
+      min-width: 25px; 
+      text-align: center;
     }
   </style>
 
 </head>
 <body>
   <header>
-        <div class="logo-container">
+    <div class="logo-container">
       <img src="../assets/img/karakter/logo3.png" alt="SiPintar Logo" class="logo">
       <h2>SiPintar Net</h2>
     </div>
     <nav>
       <a href="../index.html">Beranda</a>
-      <a href="../pages/materi/materi.html">Materi</a>
-      <a href="../pages/kuis/kuis.html">Kuis</a>
-      <a href="../pages/video.html">Video</a>
-      <a href="tentang.html">Tentang Kami</a>
+      <a href="materi/materi.html">Materi</a>
+      <a href="kuis/kuis.html">Kuis</a>
+      <a href="video.html">Video</a>
+      <a href="tentang.html" class="active">Tentang Kami</a>
     </nav>
   </header>
+
   <section class="page-header tentang">
     <h1>Tentang SiPintar Net</h1>
     <p>Platform pembelajaran inovatif yang membuat belajar menjadi menyenangkan untuk anak-anak SD</p>
   </section>
 
-  <div class="about-container">
-
-    <div class="about-section">
-      <h2><i class="fas fa-lightbulb"></i> Visi & Misi</h2>
+  <main class="container about-container"> 
+    <section class="about-section">
+      <h2><i class="fas fa-bullseye"></i> Visi & Misi Kami</h2>
       <div class="highlight-box">
-        <p><strong>Visi:</strong> Menciptakan generasi muda Indonesia yang cerdas dan kreatif melalui metode pembelajaran yang menyenangkan dan interaktif.</p>
-        <p><strong>Misi:</strong> Menyediakan konten edukasi berkualitas tinggi yang mudah diakses oleh semua anak SD di Indonesia, membantu mereka memahami konsep dasar dengan cara yang lebih menarik melalui teknologi digital.</p>
+        <h4>Visi</h4>
+        <p>Menciptakan generasi muda Indonesia yang <strong>cerdas, kreatif, dan berkarakter</strong> melalui metode pembelajaran digital yang menyenangkan dan mudah diakses.</p>
+        <h4>Misi</h4>
+        <ul style="padding-left: 20px; list-style-type: disc;">
+            <li>Menyediakan konten edukasi berkualitas tinggi yang sesuai kurikulum dan perkembangan anak usia SD.</li>
+            <li>Mengembangkan fitur interaktif (materi, kuis, video) yang merangsang minat belajar dan pemahaman konsep.</li>
+            <li>Membangun platform yang aman, ramah anak, dan mudah dinavigasi oleh siswa, guru, maupun orang tua.</li>
+            <li>Berkolaborasi dengan pendidik dan ahli untuk terus meningkatkan kualitas konten dan metode pembelajaran.</li>
+        </ul>
       </div>
-    </div>
+    </section>
 
-    <div class="about-section">
-      <h2><i class="fas fa-chalkboard-teacher"></i> Metode Pembelajaran</h2>
-      <p>Kami menggunakan pendekatan pembelajaran berbasis permainan (game-based learning) yang telah terbukti efektif meningkatkan minat belajar anak-anak. Setiap materi dirancang dengan:</p>
-      <ul style="list-style-type: none; margin: 15px 0;">
-        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: #4c83f1; margin-right: 10px;"></i> Animasi dan ilustrasi menarik</li>
-        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: #4c83f1; margin-right: 10px;"></i> Kuis interaktif dengan umpan balik langsung</li>
-        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: #4c83f1; margin-right: 10px;"></i> Video kartun edukatif</li>
-        <li><i class="fas fa-check-circle" style="color: #4c83f1; margin-right: 10px;"></i> Konten sesuai kurikulum sekolah dasar</li>
+    <section class="about-section">
+      <h2><i class="fas fa-cogs"></i> Metode Pembelajaran</h2>
+      <p>Kami percaya bahwa belajar seharusnya menjadi petualangan yang seru! Oleh karena itu, SiPintar Net mengadopsi pendekatan pembelajaran yang inovatif dan interaktif:</p>
+      <ul class="metode-list">
+        <li class="metode-list-item">
+          <i class="fas fa-magic metode-list-icon"></i>
+          <span>Animasi dan ilustrasi visual yang menarik untuk mempermudah pemahaman konsep.</span>
+        </li>
+        <li class="metode-list-item">
+          <i class="fas fa-gamepad metode-list-icon"></i>
+          <span>Kuis edukatif dan permainan interaktif dengan umpan balik langsung untuk menguji dan memperkuat pemahaman.</span>
+        </li>
+        <li class="metode-list-item">
+          <i class="fas fa-film metode-list-icon"></i>
+          <span>Video pembelajaran kartun yang lucu, menghibur, sekaligus mendidik.</span>
+        </li>
+        <li class="metode-list-item">
+          <i class="fas fa-check-circle metode-list-icon"></i>
+          <span>Materi yang disusun sesuai dengan kurikulum sekolah dasar terkini dan kebutuhan belajar siswa.</span>
+        </li>
+        <li class="metode-list-item">
+          <i class="fas fa-child metode-list-icon"></i>
+          <span>Pendekatan yang ramah anak, memotivasi, dan membangun rasa percaya diri dalam belajar.</span>
+        </li>
       </ul>
-    </div>
-    <div class="about-section">
-      <h2><i class="fas fa-users"></i> Tim Kami</h2>
-      <p>SiPintar Net dikembangkan oleh tim yang berdedikasi di bidang pendidikan dan teknologi:</p>
+    </section>
+
+    <section class="about-section">
+      <h2><i class="fas fa-users-cog"></i> Tim Kami</h2>
+      <p>SiPintar Net lahir dari semangat kolaborasi tim yang berdedikasi dan memiliki passion di bidang pendidikan anak serta pengembangan teknologi. Kami adalah mahasiswa Program Studi Pendidikan Guru Sekolah Dasar (PGSD) yang berupaya memberikan kontribusi nyata:</p>
       
       <div class="team-members">
         <div class="team-member">
-          <img src="../assets/img/karakter/pp.jpg" alt="" class="member-photo">
+          <img src="../assets/img/karakter/pp.jpg" alt="Foto Anisa Aulia Septiyani" class="member-photo">
           <h3 class="member-name">Anisa Aulia Septiyani</h3>
-          <p class="member-role">22060063</p>
-          <p>PGSD Nonreg B2</p>
+          <p class="member-id"><strong>NIM:</strong> 22060063</p>
+          <p class="member-program">PGSD Nonreg B2</p>
         </div>
         
         <div class="team-member">
-          <img src="../assets/img/karakter/isni.jpg" alt="Budi Santoso" class="member-photo">
+          <img src="../assets/img/karakter/isni.jpg" alt="Foto Isni Nuraeni Fazri" class="member-photo">
           <h3 class="member-name">Isni Nuraeni Fazri</h3>
-          <p class="member-role">22060155</p>
-          <p>PGSD Nonreg B2</p>
+          <p class="member-id"><strong>NIM:</strong> 22060155</p>
+          <p class="member-program">PGSD Nonreg B2</p>
         </div>
         
         <div class="team-member">
-          <img src="../assets/img/karakter/nurva.jpg" alt="Anita Wijaya" class="member-photo">
+          <img src="../assets/img/karakter/nurva.jpg" alt="Foto Nurva Dewi Kesuma" class="member-photo">
           <h3 class="member-name">Nurva Dewi Kesuma</h3>
-          <p class="member-role">22060401</p>
-          <p>PGSD Nonreg B2</p>
+          <p class="member-id"><strong>NIM:</strong> 22060401</p>
+          <p class="member-program">PGSD Nonreg B2</p>
         </div>
 
         <div class="team-member">
-          <img src="../assets/img/karakter/putri.jpg" alt="Anita Wijaya" class="member-photo">
+          <img src="../assets/img/karakter/putri.jpg" alt="Foto Putri Ika Kartika" class="member-photo">
           <h3 class="member-name">Putri Ika Kartika</h3>
-          <p class="member-role">22060334</p>
-          <p>PGSD Nonreg B2</p>
+          <p class="member-id"><strong>NIM:</strong> 22060334</p>
+          <p class="member-program">PGSD Nonreg B2</p>
         </div>
 
         <div class="team-member">
-            <img src="../assets/img/karakter/lulu.jpg" alt="Anita Wijaya" class="member-photo">
+            <img src="../assets/img/karakter/lulu.jpg" alt="Foto Lulu Nurlatifah" class="member-photo">
             <h3 class="member-name">Lulu Nurlatifah</h3>
-            <p class="member-role">22060062</p>
-            <p>PGSD Nonreg B2</p>
+            <p class="member-id"><strong>NIM:</strong> 22060062</p>
+            <p class="member-program">PGSD Nonreg B2</p>
           </div>
       </div>
-    </div>
+      <p style="margin-top: 20px; text-align:center;">Kami berkomitmen untuk terus belajar dan mengembangkan SiPintar Net agar menjadi platform edukasi terbaik untuk anak Indonesia!</p>
+    </section>
 
-    <div class="about-section">
-      <h2><i class="fas fa-envelope"></i> Hubungi Kami</h2>
-      <p>Kami selalu terbuka untuk saran, masukan, dan kerjasama:</p>
-      <div style="margin-top: 20px;">
+    <section class="about-section">
+      <h2><i class="fas fa-headset"></i> Hubungi Kami</h2>
+      <p>Kami sangat senang mendengar saran, masukan, atau jika Anda tertarik untuk berkolaborasi. Jangan ragu untuk menghubungi kami melalui:</p>
+      <div class="contact-info-container">
         <div class="contact-info">
           <i class="fas fa-envelope"></i>
-          <span>hello@sipintarnet.edu</span>
+          <a href="mailto:hello@sipintarnet.edu">anisaauliaseptiyani275@gmail.com</a>
         </div>
         <div class="contact-info">
-          <i class="fas fa-phone"></i>
-          <span>(021) 1234 5678</span>
+          <i class="fas fa-phone-alt"></i>
+          <a href="tel:+622112345678">+62 857-5973-7938</a>
         </div>
         <div class="contact-info">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Jl. Pendidikan No. 123, Jakarta Selatan</span>
+          <span>Jl. Pendidikan Ceria No. 123, Kota Edukasi, Indonesia</span>
+        </div>
+        <div class="contact-info">
+            <i class="fab fa-instagram"></i>
+            <a href="#" target="_blank" rel="noopener noreferrer">@SiPintarNet_Edu</a>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
 
   <footer>
     &copy; 2025 SiPintar Net - Belajar Jadi Asyik
