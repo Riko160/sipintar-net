@@ -3,18 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Video Kartun - SiPintar Net</title>
-  <link rel="icon" type="image/png" href="../assets/img/karakter/logo3.png">
+  <title>Video Edukatif - SiPintar Net</title> <link rel="icon" type="image/png" href="../assets/img/karakter/logo3.png">
   
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <link rel="stylesheet" href="../assets/css/style.css">
 
   <style>
+    /* CATATAN: Idealnya, semua CSS di bawah ini dipindahkan ke file ../assets/css/style.css Anda */
     .filter-buttons {
       display: flex;
       justify-content: center;
@@ -37,6 +34,9 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
       transition: all 0.3s ease;
     }
+    .filter-buttons button .fas { /* Untuk ikon di tombol filter */
+        margin-right: 8px;
+    }
 
     .filter-buttons button.active,
     .filter-buttons button:hover {
@@ -45,11 +45,17 @@
       transform: scale(1.05);
     }
 
+    .videos-container { /* Tambahkan class ini jika belum ada di HTML sebelumnya */
+        /* Mungkin perlu padding atau margin jika .page-header full-width */
+        /* Contoh: padding-top: 20px; */
+    }
+
     .videos {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 25px; /* Sedikit diperbesar gapnya */
       justify-content: center;
+      padding-bottom: 20px; /* Jarak ke footer */
     }
 
     .video-card {
@@ -57,27 +63,36 @@
       background-color: #fff;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease, opacity 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Shadow sedikit diperhalus */
+      transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+    }
+    .video-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.12);
     }
     .video-card.hidden {
+      display: none; /* Langsung sembunyikan daripada hanya opacity untuk performa lebih baik */
+      /*
       opacity: 0;
       transform: scale(0.95);
       visibility: hidden;
       pointer-events: none;
+      */
     }
 
     .video-card.show {
+      display: flex; /* Atau block/inline-block sesuai struktur internal Anda */
+      flex-direction: column; /* Agar info di bawah thumbnail */
       opacity: 1;
       transform: scale(1);
       visibility: visible;
-      animation: fadeInScale 0.4s ease;
+      animation: fadeInScale 0.4s ease-out; /* Animasi lebih halus */
     }
 
     @keyframes fadeInScale {
       from {
         opacity: 0;
-        transform: scale(0.95);
+        transform: scale(0.9);
       }
       to {
         opacity: 1;
@@ -89,60 +104,93 @@
       width: 100%;
       height: 180px;
       border: none;
+      display: block; /* Menghilangkan spasi bawah iframe */
     }
 
     .video-info {
       padding: 15px;
-      text-align: center;
+      text-align: left; /* Ubah ke kiri agar lebih rapi */
+      flex-grow: 1; /* Agar info mengisi sisa ruang */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* Agar tombol "Tonton" di bawah */
     }
+    .video-info h3 {
+        font-size: 1.2em;
+        color: #333;
+        margin-top: 0;
+        margin-bottom: 8px;
+    }
+    .video-info p {
+        font-size: 0.9em;
+        color: #666;
+        margin-bottom: 12px;
+        flex-grow: 1;
+    }
+
 
     .watch-btn {
       display: inline-block;
       margin-top: 10px;
-      padding: 8px 12px;
+      padding: 8px 15px; /* Sedikit diperbesar paddingnya */
       background-color: #4c83f1;
       color: #fff;
       text-decoration: none;
       border-radius: 6px;
-      font-size: 14px;
+      font-size: 0.9em; /* Disesuaikan */
+      font-weight: 600;
       transition: background-color 0.3s ease;
+      align-self: flex-start; /* Tombol rata kiri jika info rata kiri */
     }
 
     .watch-btn:hover {
       background-color: #345ec0;
     }
 
-        .video-filter-section {
+    .video-filter-section {
       background-color: #f0f4ff;
       padding: 30px;
       border-radius: 16px;
-      max-width: 960px;
-      margin: 0 auto 40px auto;
+      max-width: 960px; /* Diatur agar tidak terlalu lebar di layar besar */
+      margin: 20px auto 40px auto; /* Penyesuaian margin */
       text-align: center;
-      box-shadow: 0 4px 12px rgba(167, 164, 164, 0.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Shadow lebih halus */
     }
 
-    .video-section-title {
-      font-size: 26px;
+    .video-section-title { /* Judul "Eksplorasi Video..." */
+      font-size: 2em; /* Disesuaikan dengan H1 halaman */
       font-weight: 700;
-      color: #6280d1;
-      margin-bottom: 20px;
+      color: #3b73d9; /* Warna biru lebih tua, sesuaikan */
+      margin-bottom: 30px;
+      text-align: center; /* Ditengahkan */
     }
 
     .filter-description {
-      font-size: 17px;
+      font-size: 1.1em; /* Sedikit diperbesar */
       color: #444;
-      margin-bottom: 18px;
+      margin-bottom: 25px; /* Jarak lebih ke tombol filter */
       background-color: #e9f0ff;
       padding: 12px 20px;
       border-left: 6px solid #4c83f1;
       border-radius: 8px;
-      font-weight: 500;
-      font-style: italic;
+      font-weight: 600; /* Sedikit lebih tebal */
+      font-style: normal; /* Normal agar lebih mudah dibaca */
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
       display: inline-block;
     }
-
+    .filter-description i {
+        margin-right: 8px; /* Jarak ikon */
+    }
+    #no-videos-message {
+        text-align: center;
+        font-size: 1.2em;
+        color: #777;
+        padding: 40px 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        margin-top: 20px;
+        display: none; /* Sembunyikan awalnya */
+    }
   </style>
 </head>
 <body>
@@ -153,120 +201,150 @@
     </div>
     <nav>
       <a href="../index.html">Beranda</a>
-      <a href="../pages/materi/materi.html">Materi</a>
-      <a href="../pages/kuis/kuis.html">Kuis</a>
-      <a href="video.html">Video</a>
-      <a href="../pages/tentang.html">Tentang Kami</a>
+      <a href="materi/materi.html">Materi</a>
+      <a href="kuis/kuis.html">Kuis</a>
+      <a href="video.html" class="active">Video</a>
+      <a href="tentang.html">Tentang Kami</a>
     </nav>
   </header>
 
   <section class="page-header video">
-    <h1>Video Kartun Edukatif</h1>
-    <p>Belajar sambil bermain melalui video animasi yang menyenangkan dan mendidik</p>
+    <h1>Video Kartun Edukatif <i class="fas fa-play-circle"></i></h1>
+    <p>Belajar sambil bermain melalui video animasi yang menyenangkan dan mendidik untuk semua tingkatan!</p>
   </section>
 
-  <section class="video-filter-section">
-  <p class="filter-description"><i class="fas fa-magic" style="color:#4c83f1;"></i> Pilih kategori video di bawah ini untuk belajar dengan cara yang menyenangkan!</p>
-  <div class="filter-buttons">
-    <!-- tombol filter -->
-    <button class="active" data-filter="all">Semua</button>
-    <button data-filter="bahasa">Bahasa</button>
-    <button data-filter="ipa">IPA</button>
-    <button data-filter="moral">Moral</button>
-  </div>
-</section>
+  <main class="container"> <section class="video-filter-section">
+      <p class="filter-description"><i class="fas fa-filter"></i>Pilih kategori video di bawah ini untuk belajar dengan cara yang menyenangkan!</p>
+      <div class="filter-buttons">
+        <button class="active" data-filter="all"><i class="fas fa-film"></i> Semua</button>
+        <button data-filter="mtk"><i class="fas fa-calculator"></i> Matematika</button>
+        <button data-filter="bahasa"><i class="fas fa-book-open"></i> Bahasa</button>
+        <button data-filter="ipa"><i class="fas fa-flask"></i> IPA</button>
+      </div>
+    </section>
 
-  <section class="videos-container">
-    <h2 class="video-section-title">Eksplorasi Video Edukatif Kami</h2>
-    <div class="videos">
-      <!-- Video Bahasa -->
-      <div class="video-card" data-kategori="bahasa">
-        <div class="video-thumbnail">
-          <iframe src="https://www.youtube.com/embed/ND1QoJQAmyM?si=ZDfGSipuPXHhRL6W" allowfullscreen></iframe>
+    <section class="videos-container">
+      <h2 class="video-section-title">Eksplorasi Video Edukatif Kami</h2>
+      <div class="videos">
+        <div class="video-card show" data-kategori="mtk">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/vbbtzF-TH7k?si=qLvBFmg27EhjAorB" allowfullscreen title="Video Matematika 1"></iframe>
+          </div>
+          <div class="video-info">
+            <h3>Berhitung Angka 1-20 Mudah!</h3>
+            <p>Animasi seru belajar mengenal dan berhitung angka 1 sampai 20 untuk anak PAUD dan SD awal.</p>
+            <a href="https://www.youtube.com/embed/vbbtzF-TH7k?si=qLvBFmg27EhjAorB" class="watch-btn" target="_blank"><i class="fas fa-play"></i> Tonton Sekarang</a>
+          </div>
         </div>
-        <div class="video-info">
-          <h3>Belajar Huruf & Angka</h3>
-          <p>Video edukatif untuk mengenal huruf dan angka dengan animasi lucu.</p>
-          <a href="https://www.youtube.com/embed/ND1QoJQAmyM?si=ZDfGSipuPXHhRL6W" class="watch-btn" target="_blank">
-            <i class="fas fa-play"></i> Tonton Sekarang
-          </a>
+        <div class="video-card show" data-kategori="mtk">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/EGloE8s0UTk?si=RFn4L30IvCp8GaCU" allowfullscreen title="Video Matematika 2"></iframe>
+          </div>
+          <div class="video-info">
+            <h3>Mengenal Bentuk Geometri Dasar</h3>
+            <p>Video interaktif untuk anak-anak mengenal bentuk persegi, lingkaran, dan segitiga di sekitar kita.</p>
+            <a href="https://www.youtube.com/embed/EGloE8s0UTk?si=RFn4L30IvCp8GaCU" class="watch-btn" target="_blank"><i class="fas fa-play"></i> Tonton Sekarang</a>
+          </div>
+        </div>
+
+        <div class="video-card show" data-kategori="bahasa">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/mwbbtpcaTus?si=XZel9HpxrTFlKoB1" allowfullscreen title="Video Bahasa 1"></iframe>
+          </div>
+          <div class="video-info">
+            <h3>Belajar Huruf A-Z dengan Lagu</h3>
+            <p>Video edukatif untuk mengenal semua huruf abjad dengan nyanyian yang ceria dan mudah diingat.</p>
+            <a href="https://www.youtube.com/embed/mwbbtpcaTus?si=XZel9HpxrTFlKoB1" class="watch-btn" target="_blank"><i class="fas fa-play"></i> Tonton Sekarang</a>
+          </div>
+        </div>
+        <div class="video-card show" data-kategori="bahasa">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/67Lds8dGXWw?si=ylEx69qBZz9ho96i" allowfullscreen title="Video Bahasa 2"></iframe>
+          </div>
+          <div class="video-info">
+            <h3>Membaca Suku Kata Sederhana</h3>
+            <p>Panduan mudah dan menyenangkan untuk anak mulai belajar merangkai suku kata menjadi kata.</p>
+            <a href="https://www.youtube.com/embed/67Lds8dGXWw?si=ylEx69qBZz9ho96i" class="watch-btn" target="_blank"><i class="fas fa-play"></i> Tonton Sekarang</a>
+          </div>
+        </div>
+
+        <div class="video-card show" data-kategori="ipa">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/L0-myFgs1eU?si=SGldqU_xDWv3aGWp" allowfullscreen title="Video IPA 1"></iframe>
+          </div>
+          <div class="video-info">
+            <h3>Petualangan Mengenal Anggota Tubuh</h3>
+            <p>Animasi menarik yang menjelaskan bagian-bagian tubuh manusia dan fungsinya untuk anak-anak.</p>
+            <a href="https://www.youtube.com/embed/L0-myFgs1eU?si=SGldqU_xDWv3aGWp" class="watch-btn" target="_blank"><i class="fas fa-play"></i> Tonton Sekarang</a>
+          </div>
+        </div>
+        <div class="video-card show" data-kategori="ipa">
+          <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/Ly840Bi4HJk?si=Z_wYg_49pWfYGhGz" allowfullscreen title="Video IPA 2"></iframe>
+          </div>
+          <div class="video-info">
+            <h3>Hewan Sahabat Kita</h3>
+            <p>Yuk, kenalan dengan berbagai jenis hewan di sekitar kita dan ciri-ciri unik mereka!</p>
+            <a href="https://www.youtube.com/embed/Ly840Bi4HJk?si=Z_wYg_49pWfYGhGz" class="watch-btn" target="_blank"><i class="fas fa-play"></i> Tonton Sekarang</a>
+          </div>
         </div>
       </div>
-
-      <div class="video-card" data-kategori="bahasa">
-        <div class="video-thumbnail">
-          <iframe src="https://www.youtube.com/embed/sLRnGFVQVFY?si=n01llyE5nyTlY2Av" allowfullscreen></iframe>
-        </div>
-        <div class="video-info">
-          <h3>Lagu ABC</h3>
-          <p>Video edukatif untuk mengenal huruf dengan nyanyian yang seru.</p>
-          <a href="https://www.youtube.com/embed/sLRnGFVQVFY?si=n01llyE5nyTlY2Av" class="watch-btn" target="_blank">
-            <i class="fas fa-play"></i> Tonton Sekarang
-          </a>
-        </div>
+      <div id="no-videos-message">
+        <p><i class="fas fa-video-slash"></i> Maaf, belum ada video untuk kategori ini saat ini. Coba lihat kategori lainnya ya!</p>
       </div>
-
-      <!-- Video IPA -->
-      <div class="video-card" data-kategori="ipa">
-        <div class="video-thumbnail">
-          <iframe src="https://www.youtube.com/embed/2EgP_zSOKN4?si=_luPoYvNiH2PnI-K" allowfullscreen></iframe>
-        </div>
-        <div class="video-info">
-          <h3>Animasi Sains Dasar</h3>
-          <p>Mengenal tubuh manusia dan lingkungan sekitar dengan cara menyenangkan.</p>
-          <a href="https://www.youtube.com/embed/2EgP_zSOKN4?si=_luPoYvNiH2PnI-K" class="watch-btn" target="_blank">
-            <i class="fas fa-play"></i> Tonton Sekarang
-          </a>
-        </div>
-      </div>
-
-      <!-- Video Moral -->
-      <div class="video-card" data-kategori="moral">
-        <div class="video-thumbnail">
-          <iframe src="https://www.youtube.com/embed/P-TtJQ6sD_U?si=UCp9ay26NZEHIejl" allowfullscreen></iframe>
-        </div>
-        <div class="video-info">
-          <h3>Kartun Cerita Moral</h3>
-          <p>Cerita pendek bergambar yang mengajarkan nilai-nilai kebaikan untuk anak-anak.</p>
-          <a href="https://www.youtube.com/embed/P-TtJQ6sD_U?si=UCp9ay26NZEHIejl" class="watch-btn" target="_blank">
-            <i class="fas fa-play"></i> Tonton Sekarang
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </section>
+    </section>
+  </main>
 
   <footer>
     &copy; 2025 SiPintar Net - Belajar Jadi Asyik
   </footer>
 
 <script>
-  const filterButtons = document.querySelectorAll('.filter-buttons button');
-  const videoCards = document.querySelectorAll('.video-card');
+  document.addEventListener('DOMContentLoaded', function() { // Pastikan DOM sudah siap
+    const filterButtons = document.querySelectorAll('.filter-buttons button');
+    const videoCards = document.querySelectorAll('.video-card');
+    const noVideosMessage = document.getElementById('no-videos-message');
+
+    // Fungsi untuk mengupdate tampilan video berdasarkan filter
+    function filterVideos(selectedFilter) {
+        let videosFound = false;
+        videoCards.forEach(card => {
+            const kategori = card.getAttribute('data-kategori');
+            if (selectedFilter === 'all' || kategori === selectedFilter) {
+                card.classList.remove('hidden');
+                card.classList.add('show');
+                videosFound = true;
+            } else {
+                card.classList.remove('show');
+                // Tambahkan penundaan sebelum menyembunyikan untuk efek animasi keluar (jika diinginkan)
+                // setTimeout(() => { card.classList.add('hidden'); }, 300); 
+                // Untuk saat ini, langsung saja:
+                card.classList.add('hidden'); 
+            }
+        });
+
+        // Tampilkan atau sembunyikan pesan "tidak ada video"
+        if (videosFound) {
+            noVideosMessage.style.display = 'none';
+        } else {
+            noVideosMessage.style.display = 'block';
+        }
+    }
 
     filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const filter = button.getAttribute('data-filter');
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
 
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
 
-        videoCards.forEach(card => {
-          const kategori = card.getAttribute('data-kategori');
-
-          if (filter === 'all' || kategori === filter) {
-            card.classList.remove('hidden');
-            card.classList.add('show');
-          } else {
-            card.classList.remove('show');
-            card.classList.add('hidden');
-          }
+            filterVideos(filter);
         });
-      });
     });
 
-
+    // Inisialisasi tampilan: tampilkan semua video saat halaman dimuat
+    filterVideos('all');
+  });
 </script>
 
 </body>
