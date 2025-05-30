@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kuis IPA Kelas 3 - SiPintar Net</title>
+  <link rel="icon" type="image/png" href="../../../assets/img/karakter/logo3.png">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    /* CSS untuk breadcrumb (konsisten) */
+    .breadcrumb-container {
+        padding: 15px 0;
+        margin-bottom: 10px;
+        font-size: 0.95em;
+        border-bottom: 1px solid #eee;
+    }
+    .breadcrumb-container a {
+        text-decoration: none;
+        color: #007bff;
+    }
+    .breadcrumb-container a:hover {
+        text-decoration: underline;
+    }
+    .breadcrumb-container span {
+        color: #6c757d;
+    }
+
+    /* Gaya untuk Kuis (sama seperti kuis kelas sebelumnya) */
+    .quiz-page-header {
+        padding: 30px 20px;
+        text-align: center;
+        margin-bottom: 30px;
+        background-color: #fff3e0; 
+        border-bottom: 3px solid #fd7e14; 
+    }
+    .quiz-page-header h1 {
+        color: #fd7e14; 
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 2em;
+    }
+    .quiz-page-header p {
+        font-size: 1.1em;
+        color: #555;
+    }
+    .quiz-container {
+        background-color: #fff;
+        padding: 25px 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        max-width: 800px;
+        margin: 0 auto 30px auto;
+    }
+    .quiz-title {
+        text-align: center;
+        color: #333;
+        font-size: 1.5em;
+        margin-bottom: 25px;
+        font-weight: 600;
+    }
+    .question {
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px dashed #ddd;
+    }
+    .question:last-of-type {
+        border-bottom: none;
+        margin-bottom: 20px;
+    }
+    .question h3 {
+        font-size: 1.2em;
+        color: #444;
+        margin-bottom: 15px;
+        line-height: 1.5;
+    }
+    .question-number {
+        background-color: #fd7e14; 
+        color: white;
+        padding: 3px 8px;
+        border-radius: 50%;
+        margin-right: 10px;
+        font-size: 0.9em;
+    }
+    .options {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .option {
+        display: block;
+        background-color: #f8f9fa;
+        padding: 12px 15px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #e0e0e0;
+    }
+    .option:hover {
+        background-color: #e9ecef;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .option input[type="radio"] {
+        margin-right: 10px;
+        transform: scale(1.2);
+    }
+    .submit-btn {
+        display: block;
+        width: auto; 
+        padding: 12px 30px;
+        background-color: #28a745; 
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1.1em;
+        font-weight: 600;
+        margin: 30px auto 0 auto; 
+        transition: background-color 0.3s ease;
+    }
+    .submit-btn:hover {
+        background-color: #218838;
+    }
+    .submit-btn i {
+        margin-right: 8px;
+    }
+    #popupResult {
+      display: none; 
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 1000;
+      display: flex; 
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+    }
+    #popupResult.show {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.3s ease;
+    }
+    .popup-content {
+      background-color: white;
+      padding: 30px; 
+      border-radius: 12px;
+      text-align: center;
+      width: 90%;
+      max-width: 450px; 
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+    }
+    #popupResult.show .popup-content {
+        transform: scale(1);
+    }
+    .popup-content h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #fd7e14; 
+      font-family: 'Baloo 2', cursive; 
+      font-size: 1.8em;
+    }
+    #popupMessage {
+        font-size: 1.2em; 
+        color: #333;
+        margin-bottom: 25px;
+    }
+    #popupMessage .fas { 
+        margin-right: 10px;
+        font-size: 1.3em;
+    }
+    #popupMessage .fa-star { color:gold; } 
+    #popupMessage .fa-check-circle { color: #28a745; }
+    #popupMessage .fa-thumbs-up { color: #ffc107; }
+    #popupMessage .fa-sad-tear { color: #dc3545; }
+    .popup-content button, .popup-content .button-kembali {
+      padding: 12px 20px; 
+      background-color: #fd7e14; 
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: 600;
+      text-decoration: none; 
+      transition: background-color 0.3s ease;
+      margin: 5px; 
+    }
+    .popup-content button:hover, .popup-content .button-kembali:hover {
+      background-color: #e66a00; 
+    }
+    .popup-content .button-kembali { 
+        background-color: #6c757d;
+    }
+    .popup-content .button-kembali:hover {
+        background-color: #5a6268;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="../../../assets/img/karakter/logo3.png" alt="SiPintar Logo" class="logo">
+      <h2>SiPintar Net</h2>
+    </div>
+    <nav>
+      <a href="../../../index.html">Beranda</a>
+      <a href="../../materi/materi.html">Materi</a>
+      <a href="../kuis.html" class="active">Kuis</a> 
+      <a href="../../video.html">Video</a>
+      <a href="../../tentang.html">Tentang Kami</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb-container">
+      <a href="../kuis.html">Pilih Mata Pelajaran Kuis</a> &nbsp;&gt;&nbsp; 
+      <a href="pilih-kelas-ipa.html">IPA</a> &nbsp;&gt;&nbsp;
+      <span>Kelas 3 - Kuis Dasar</span>
+    </div>
+
+    <section class="quiz-page-header">
+      <h1>Kuis Dasar IPA Kelas 3</h1>
+      <p>Seberapa jauh kamu mengenal makhluk hidup, benda, dan energi di sekitarmu? Ayo uji di sini!</p>
+    </section>
+
+    <div class="quiz-container">
+      <h2 class="quiz-title">Pilih Jawaban yang Paling Tepat!</h2>
+
+      <form id="quizFormK3IPA"> <div class="question">
+          <h3><span class="question-number">1</span> Salah satu ciri makhluk hidup adalah peka terhadap rangsang. Contohnya adalah...</h3>
+          <div class="options">
+            <label class="option"><input type="radio" name="q1" value="a"> Batu yang menggelinding saat didorong.</label>
+            <label class="option"><input type="radio" name="q1" value="b"> Daun putri malu yang menutup jika disentuh.</label>
+            <label class="option"><input type="radio" name="q1" value="c"> Air yang mengalir dari tempat tinggi ke rendah.</label>
+          </div>
+        </div>
+
+        <div class="question">
+          <h3><span class="question-number">2</span> Tumbuhan hijau membutuhkan cahaya matahari terutama untuk...</h3>
+          <div class="options">
+            <label class="option"><input type="radio" name="q2" value="a"> Istirahat di malam hari.</label>
+            <label class="option"><input type="radio" name="q2" value="b"> Membuat makanannya sendiri (fotosintesis).</label>
+            <label class="option"><input type="radio" name="q2" value="c"> Berpindah tempat mencari air.</label>
+          </div>
+        </div>
+        
+        <div class="question">
+          <h3><span class="question-number">3</span> Hewan yang hanya memakan daging hewan lain untuk makanannya disebut...</h3>
+          <div class="options">
+            <label class="option"><input type="radio" name="q3" value="a"> Herbivora</label>
+            <label class="option"><input type="radio" name="q3" value="b"> Karnivora</label>
+            <label class="option"><input type="radio" name="q3" value="c"> Omnivora</label>
+          </div>
+        </div>
+
+        <div class="question">
+          <h3><span class="question-number">4</span> Katak adalah contoh hewan yang dapat hidup di darat dan di air, sehingga digolongkan sebagai hewan...</h3>
+          <div class="options">
+            <label class="option"><input type="radio" name="q4" value="a"> Mamalia</label>
+            <label class="option"><input type="radio" name="q4" value="b"> Reptil</label>
+            <label class="option"><input type="radio" name="q4" value="c"> Amfibi</label>
+          </div>
+        </div>
+
+        <div class="question">
+          <h3><span class="question-number">5</span> Udara yang kita tiupkan ke dalam balon akan mengisi seluruh ruang balon. Ini menunjukkan sifat benda gas yaitu...</h3>
+          <div class="options">
+            <label class="option"><input type="radio" name="q5" value="a"> Bentuk dan volumenya tetap.</label>
+            <label class="option"><input type="radio" name="q5" value="b"> Bentuknya tetap, volumenya berubah.</label>
+            <label class="option"><input type="radio" name="q5" value="c"> Bentuk dan volumenya berubah sesuai wadahnya.</label>
+          </div>
+        </div>
+        
+        <div class="question">
+          <h3><span class="question-number">6</span> Ketika air sirup dituangkan dari botol ke dalam gelas, maka bentuk air sirup akan...</h3>
+          <div class="options">
+            <label class="option"><input type="radio" name="q6" value="a"> Tetap seperti bentuk botol.</label>
+            <label class="option"><input type="radio" name="q6" value="b"> Berubah mengikuti bentuk gelas.</label>
+            <label class="option"><input type="radio" name="q6" value="c"> Berubah menjadi padat.</label>
+          </div>
+        </div>
+
+        <div class="question">
+          <h3><span class="question-number">7</span> Proses perubahan wujud dari benda cair menjadi benda padat, contohnya air menjadi es, disebut...</h3>
+          <div class="options">
+            <label class="option"><input type="radio" name="q7" value="a"> Mencair</label>
+            <label class="option"><input type="radio" name="q7" value="b"> Menguap</label>
+            <label class="option"><input type="radio" name="q7" value="c"> Membeku</label>
+          </div>
+        </div>
+        
+        <div class="question">
+          <h3><span class="question-number">8</span> Pakaian basah yang dijemur di bawah sinar matahari lama kelamaan akan kering. Peristiwa ini menunjukkan air mengalami...</h3>
+          <div class="options">
+            <label class="option"><input type="radio" name="q8" value="a"> Pengembunan</label>
+            <label class="option"><input type="radio" name="q8" value="b"> Penyubliman</label>
+            <label class="option"><input type="radio" name="q8" value="c"> Penguapan</label>
+          </div>
+        </div>
+        
+        <div class="question">
+          <h3><span class="question-number">9</span> Sumber energi panas terbesar yang ada di alam bagi bumi kita adalah...</h3>
+          <div class="options">
+            <label class="option"><input type="radio" name="q9" value="a"> Api</label>
+            <label class="option"><input type="radio" name="q9" value="b"> Listrik</label>
+            <label class="option"><input type="radio" name="q9" value="c"> Matahari</label>
+          </div>
+        </div>
+        
+        <div class="question">
+          <h3><span class="question-number">10</span> Saat kita menyalakan kipas angin, terjadi perubahan energi dari energi listrik menjadi energi...</h3>
+          <div class="options">
+            <label class="option"><input type="radio" name="q10" value="a"> Panas</label>
+            <label class="option"><input type="radio" name="q10" value="b"> Cahaya</label>
+            <label class="option"><input type="radio" name="q10" value="c"> Gerak</label>
+          </div>
+        </div>
+
+        <button type="button" class="submit-btn" onclick="submitQuizK3IPA()">
+          <i class="fas fa-check-circle"></i> Selesai & Periksa Jawaban
+        </button>
+      </form>
+    </div>
+  </main>
+  
+  <div id="popupResult">
+    <div class="popup-content">
+      <h2>Hasil Kuis Kamu!</h2>
+      <div id="popupMessage"></div>
+      <div style="margin-top: 20px;">
+        <button onclick="ulangiKuisK3IPA()" style="margin-right: 10px;"><i class="fas fa-redo"></i> Ulangi Kuis</button>
+        <a href="pilih-kelas-ipa.html" class="button-kembali"> 
+            <i class="fas fa-list-ul"></i> Pilih Kuis Lain
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 SiPintar Net - Belajar Jadi Asyik
+  </footer>
+
+  <script>
+    const bankSoalK3IPA = [ // Nama variabel diubah
+        { soal: "q1", jawaban: "b" }, // Daun putri malu menutup...
+        { soal: "q2", jawaban: "b" }, // Membuat makanannya sendiri (fotosintesis)
+        { soal: "q3", jawaban: "b" }, // Karnivora
+        { soal: "q4", jawaban: "c" }, // Amfibi
+        { soal: "q5", jawaban: "c" }, // Bentuk dan volumenya berubah...
+        { soal: "q6", jawaban: "b" }, // Berubah mengikuti bentuk gelas
+        { soal: "q7", jawaban: "c" }, // Membeku
+        { soal: "q8", jawaban: "c" }, // Penguapan
+        { soal: "q9", jawaban: "c" }, // Matahari
+        { soal: "q10", jawaban: "c" } // Gerak
+    ];
+
+    function submitQuizK3IPA() { // Nama fungsi diubah
+      let score = 0;
+      const form = document.getElementById("quizFormK3IPA"); // ID form disesuaikan
+      
+      bankSoalK3IPA.forEach(item => {
+        const selectedOption = form.querySelector(`input[name="${item.soal}"]:checked`);
+        if (selectedOption && selectedOption.value === item.jawaban) {
+          score++;
+        }
+      });
+
+      let totalSoal = bankSoalK3IPA.length;
+      let resultMessage = '';
+      let iconClass = '';
+
+      if (score === totalSoal) {
+        resultMessage = `Wow, Kamu Hebat! Semua jawabanmu benar (${score} dari ${totalSoal}). Pengetahuan Alammu Luas! <i class="fas fa-star"></i>`;
+        iconClass = 'fas fa-check-circle';
+      } else if (score >= totalSoal * 0.7) {
+        resultMessage = `Bagus Sekali! Kamu benar ${score} dari ${totalSoal} soal. Kamu sudah banyak tahu tentang alam!`;
+        iconClass = 'fas fa-thumbs-up';
+      } else if (score >= totalSoal * 0.4) {
+         resultMessage = `Lumayan! Kamu benar ${score} dari ${totalSoal} soal. Terus belajar dan eksplorasi alam sekitar ya!`;
+         iconClass = 'fas fa-lightbulb';
+      }
+      else {
+        resultMessage = `Kamu benar ${score} dari ${totalSoal} soal. Jangan sedih, alam semesta ini penuh hal menarik untuk dipelajari lagi!`;
+        iconClass = 'fas fa-sad-tear';
+      }
+
+      document.getElementById("popupMessage").innerHTML = `<i class="${iconClass}"></i> ${resultMessage}`;
+      
+      const popupElement = document.getElementById("popupResult");
+      popupElement.style.display = "flex"; 
+      setTimeout(() => { 
+          popupElement.classList.add('show');
+      }, 10);
+    }
+
+    function closePopupK3IPA() { // Nama fungsi diubah
+      const popupElement = document.getElementById("popupResult");
+      popupElement.classList.remove('show');
+      setTimeout(() => {
+          popupElement.style.display = "none";
+      }, 300);
+    }
+
+    function ulangiKuisK3IPA() { // Nama fungsi diubah
+        closePopupK3IPA(); 
+        document.getElementById("quizFormK3IPA").reset(); 
+    }
+  </script>
+</body>
+</html>
