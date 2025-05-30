@@ -4,138 +4,332 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SiPintar Net - Belajar Jadi Asyik!</title>
-<link rel="icon" type="image/png" href="/assets/img/karakter/logo3.png">
+  <link rel="icon" type="image/png" href="/assets/img/karakter/logo3.png">
   
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
   
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* CSS untuk Pop-up Selamat Datang */
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6); /* Latar belakang gelap transparan */
+      display: flex; /* Menggunakan flex untuk centering */
+      justify-content: center;
+      align-items: center;
+      z-index: 1000; /* Pastikan pop-up di atas konten lain */
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
+    }
 
+    .popup-overlay.show {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .popup-content {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+      width: 90%;
+      max-width: 550px; /* Lebar maksimal pop-up */
+      text-align: center;
+      position: relative;
+      font-family: 'Nunito', sans-serif; /* Menggunakan font yang sudah ada atau Baloo 2 */
+      transform: scale(0.9);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .popup-overlay.show .popup-content {
+        transform: scale(1);
+    }
+
+    .popup-mascot {
+      width: 100px; /* Sesuaikan ukuran maskot */
+      height: auto;
+      margin-bottom: 15px;
+    }
+
+    .popup-content h2 {
+      color: #007bff; /* Warna judul, sesuaikan dengan tema */
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-family: 'Baloo 2', cursive; /* Font judul yang lebih playful */
+      font-size: 1.8em;
+    }
+
+    .popup-content p {
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 15px;
+      text-align: left; /* Ubah ke kiri untuk list agar lebih rapi */
+    }
+    .popup-content p:last-of-type { /* Paragraf terakhir sebelum tombol */
+        text-align: center; 
+        margin-bottom: 25px;
+    }
+
+
+    .popup-content ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .popup-content ul li {
+      margin-bottom: 10px;
+      color: #444;
+      display: flex;
+      align-items: center;
+    }
+
+    .popup-content .icon-list {
+      color: #28a745; /* Warna ikon list, sesuaikan */
+      margin-right: 10px;
+      font-size: 1.2em;
+      width: 20px; /* Agar alignment teks rapi */
+      text-align: center;
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 28px;
+      color: #aaa;
+      cursor: pointer;
+      line-height: 1;
+      transition: color 0.2s ease;
+    }
+
+    .popup-close:hover {
+      color: #777;
+    }
+
+    .popup-button {
+      background-color: #28a745; /* Warna tombol, sesuaikan */
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-size: 1.1em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .popup-button:hover {
+      background-color: #218838;
+      transform: translateY(-2px);
+    }
+
+        /* Tambahkan ini ke style.css Anda jika perlu */
+    header nav a#infoSiPintarBtn {
+      /* Gaya yang sama dengan link nav lainnya, atau sedikit berbeda untuk menonjol */
+      /* Contoh: */
+      /* padding: 5px 10px; */
+      /* margin-left: 5px; */
+    }
+    header nav a#infoSiPintarBtn i {
+      margin-right: 5px; /* Jarak antara ikon dan teks "Info" */
+    }
+
+  </style>
 </head>
 <body>
-  <!-- Header & Logo -->
   <header>
     <div class="logo-container">
       <img src="assets/img/karakter/logo3.png" alt="SiPintar Logo" class="logo">
       <h2>SiPintar Net</h2>
     </div>
     <nav>
-      <a href="index.html">Beranda</a>
-      <a href="pages/materi/materi.html">Materi</a>
+      <a href="index.html" class="active">Beranda</a>
+      <a href="pages/materi.html">Materi</a>
       <a href="pages/kuis/kuis.html">Kuis</a>
       <a href="pages/video.html">Video</a>
       <a href="pages/tentang.html">Tentang Kami</a>
+      <a href="#" id="infoSiPintarBtn" title="Tentang SiPintar Net"><i class="fas fa-info-circle"></i> Info</a>
     </nav>
   </header>
 
-  <!-- Hero Section + Maskot -->
-  <section class="hero">
-    <img src="assets/img/karakter/mascot2.png" class="mascot" alt="Robot Pintar">
-    <h1>Yuk, Belajar Seru Bareng SiPintar! 🤖✨</h1>
-    <p>Petualangan belajar jadi lebih seru dengan materi interaktif, kuis menantang, dan video animasi keren!</p>
-    <div class="welcome-message">
-      <div class="scrolling-text">
-        🎉 Selamat datang di SiPintar Net! • Siap jadi bintang kelas? 🌟 • Belajar sambil bermain, pasti asyik! 🎮📚 • Yuk mulai petualanganmu sekarang! 🚀
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Fitur Card -->
-  <section class="features-container">
-    <h2>Fitur Pembelajaran Kami ✨</h2>
-    <div class="features">
-      <a href="pages/materi/materi.html" class="feature">
-        <div class="feature-icon">
-          <i class="fas fa-book-open"></i>
-        </div>
-        <h3>Materi Interaktif</h3>
-        <p>Belajar dengan animasi dan visual menarik agar mudah dipahami anak-anak.</p>
-        <div class="feature-btn">Lihat Materi</div>
-      </a>
-
-      <a href="pages/kuis/kuis.html" class="feature">
-        <div class="feature-icon">
-          <i class="fas fa-question-circle"></i>
-        </div>
-        <h3>Kuis Edukatif</h3>
-        <p>Latihan soal seru untuk menguji pemahaman materi secara menyenangkan.</p>
-        <div class="feature-btn">Coba Kuis</div>
-      </a>
-
-      <a href="pages/video.html" class="feature">
-        <div class="feature-icon">
-          <i class="fas fa-video"></i>
-        </div>
-        <h3>Video Kartun</h3>
-        <p>Tonton video animasi pembelajaran yang lucu dan menghibur sambil belajar.</p>
-        <div class="feature-btn">Tonton Video</div>
-      </a>
-    </div>
-  </section>
-
-    <!-- Achievement Section -->
-  <section class="achievements">
-    <h2><i class="fas fa-trophy"></i> Pencapaian Hari Ini</h2>
-    <div class="achievement-list">
-      <div class="achievement-item" data-target="3">
-        <span>📚 Baca Materi (0/3)</span>
-        <div class="progress-bar">
-          <div class="progress" style="width: 0%"></div>
+  <main>
+    <section class="hero">
+      <img src="assets/img/karakter/mascot2.png" class="mascot" alt="Robot Pintar Maskot SiPintar Net">
+      <h1>Yuk, Belajar Seru Bareng SiPintar! <i class="fas fa-robot"></i><i class="fas fa-star" style="color: #ffd700;"></i></h1>
+      <p>Petualangan belajar jadi lebih seru dengan materi interaktif, kuis menantang, dan video animasi keren!</p>
+      
+      <div class="welcome-message">
+        <div class="scrolling-text">
+          🎉 Selamat datang di SiPintar Net! • Siap jadi bintang kelas? 🌟 • Belajar sambil bermain, pasti asyik! 🎮📚 • Yuk mulai petualanganmu sekarang! 🚀
         </div>
       </div>
-      <div class="achievement-item" data-target="1">
-        <span>🎮 Selesaikan Kuis (0/1)</span>
-        <div class="progress-bar">
-          <div class="progress" style="width: 0%"></div>
+    </section>
+
+    <section class="features-container">
+      <h2>Fitur Pembelajaran Kami <i class="fas fa-lightbulb" style="color: #ffc107;"></i></h2>
+      <div class="features">
+        <a href="pages/materi.html" class="feature">
+          <div class="feature-icon">
+            <i class="fas fa-book-open"></i>
+          </div>
+          <h3>Materi Interaktif</h3>
+          <p>Belajar dengan animasi dan visual menarik agar mudah dipahami anak-anak.</p>
+          <div class="feature-btn">Lihat Materi</div>
+        </a>
+
+        <a href="pages/kuis/kuis.html" class="feature">
+          <div class="feature-icon">
+            <i class="fas fa-question-circle"></i>
+          </div>
+          <h3>Kuis Edukatif</h3>
+          <p>Latihan soal seru untuk menguji pemahaman materi secara menyenangkan.</p>
+          <div class="feature-btn">Coba Kuis</div>
+        </a>
+
+        <a href="pages/video.html" class="feature">
+          <div class="feature-icon">
+            <i class="fas fa-video"></i>
+          </div>
+          <h3>Video Edukatif</h3>
+          <p>Tonton video animasi pembelajaran yang lucu dan menghibur sambil belajar.</p>
+          <div class="feature-btn">Tonton Video</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="achievements">
+      <h2><i class="fas fa-trophy"></i> Pencapaian Hari Ini</h2>
+      <p style="text-align: center; font-size: 0.9em; color: #777;">(Ini adalah simulasi, progres akan diimplementasikan nanti!)</p>
+      <div class="achievement-list">
+        <div class="achievement-item" data-target="3" data-progress-id="materiProgress" data-text-id="materiText">
+          <span id="materiText">📚 Baca Materi (0/3)</span>
+          <div class="progress-bar">
+            <div class="progress" id="materiProgress" style="width: 0%"></div>
+          </div>
+        </div>
+        <div class="achievement-item" data-target="1" data-progress-id="kuisProgress" data-text-id="kuisText">
+          <span id="kuisText">🎮 Selesaikan Kuis (0/1)</span>
+          <div class="progress-bar">
+            <div class="progress" id="kuisProgress" style="width: 0%"></div>
+          </div>
+        </div>
+        <div class="achievement-item" data-target="2" data-progress-id="videoProgress" data-text-id="videoText">
+          <span id="videoText">🎥 Tonton Video (0/2)</span>
+          <div class="progress-bar">
+            <div class="progress" id="videoProgress" style="width: 0%"></div>
+          </div>
         </div>
       </div>
-      <div class="achievement-item" data-target="2">
-        <span>🎥 Tonton Video (0/2)</span>
-        <div class="progress-bar">
-          <div class="progress" style="width: 0%"></div>
+    </section>
+
+    <section class="edu-calendar">
+      <div class="calendar-header">
+        <span id="days-month-year"></span>
+      </div>
+      <div class="fact-box">
+        <div class="fact-header">
+          <i class="fas fa-lightbulb"></i>
+          <h3>Fakta Hari Ini</h3>
         </div>
+        <p id="fun-fact"></p>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
+  <div id="welcomePopupOverlay" class="popup-overlay" style="display: none;">
+  <div class="popup-content">
+    <span class="popup-close" onclick="closeWelcomePopup()">&times;</span>
+    <img src="assets/img/karakter/logo3.png" alt="Maskot SiPintar" class="popup-mascot">
+    <h2>Selamat Datang di SiPintar Net! <i class="fas fa-hand-sparkles" style="color: #ffc107;"></i></h2>
+    <p>SiPintar Net adalah teman belajarmu yang asyik! Di sini kamu bisa menemukan:</p>
+    <ul>
+      <li><i class="fas fa-book-reader icon-list"></i> Materi pelajaran SD yang seru dan mudah dipahami.</li>
+      <li><i class="fas fa-puzzle-piece icon-list"></i> Kuis interaktif untuk menguji kemampuanmu dengan cara yang menyenangkan.</li>
+      <li><i class="fas fa-film icon-list"></i> Video edukatif yang menghibur dan menambah wawasan.</li>
+    </ul>
+    <p>Yuk, jelajahi semua fiturnya dan buat belajarmu jadi makin pintar dan menyenangkan! Siap belajar bareng SiPintar?</p>
+    <button class="popup-button" onclick="closeWelcomePopup()">Mulai Petualangan!</button>
+  </div>
+</div>
 
-      <!-- Edu Calendar -->
-  <section class="edu-calendar">
-    <div class="calendar-header">
-      <span id="days-month-year"></span>
-    </div>
-    <div class="fact-box">
-      <div class="fact-header">
-        <i class="fas fa-lightbulb"></i>
-        <h3>Fakta Hari Ini</h3>
-      </div>
-      <p id="fun-fact"></p>
-    </div>
-  </section>
-
-  <!-- Footer -->
   <footer>
     &copy; 2025 SiPintar Net - Belajar Jadi Asyik
   </footer>
 
-    <script>
-    // Achievement System
+  <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Simulasi progress (bisa diganti dengan data real)
-      setTimeout(() => {
-        document.querySelectorAll('.achievement-item').forEach(item => {
-          const target = parseInt(item.getAttribute('data-target'));
-          const randomProgress = Math.floor(Math.random() * (target + 1));
-          const progressBar = item.querySelector('.progress');
-          const textSpan = item.querySelector('span');
-          
-          progressBar.style.width = `${(randomProgress/target)*100}%`;
-          textSpan.textContent = textSpan.textContent.replace(/\(\d+\/\d+\)/, `(${randomProgress}/${target})`);
+      // --- Bagian untuk Pop-up Selamat Datang ---
+      const welcomePopup = document.getElementById('welcomePopupOverlay');
+      const infoSiPintarButton = document.getElementById('infoSiPintarBtn'); // Tombol baru
+      const welcomePopupShownKey = 'sipintarWelcomeShown';
+
+      // Fungsi untuk menampilkan pop-up
+      function showWelcomePopup() {
+        if (welcomePopup) {
+          welcomePopup.style.display = 'flex';
+          setTimeout(() => {
+              welcomePopup.classList.add('show');
+          }, 10);
+        }
+      }
+
+      // Fungsi untuk menutup pop-up
+      // Menandai sudah ditampilkan hanya jika ditutup setelah muncul otomatis
+      // atau jika memang ingin menandai sudah 'dibaca' walau dibuka manual.
+      // Untuk kesederhanaan, kita tetap set flag saat ditutup,
+      // karena fungsi utama flag adalah mencegah AUTO-show berikutnya.
+      window.closeWelcomePopup = function() {
+        if (welcomePopup) {
+          welcomePopup.classList.remove('show');
+          setTimeout(() => {
+              welcomePopup.style.display = 'none';
+          }, 300);
+          localStorage.setItem(welcomePopupShownKey, 'true'); // Tandai sudah pernah interaksi
+        }
+      }
+
+      // Cek apakah pop-up sudah pernah ditampilkan (untuk auto-show)
+      if (!localStorage.getItem(welcomePopupShownKey)) {
+        setTimeout(showWelcomePopup, 1500); // Tunda 1.5 detik untuk auto-show
+      }
+
+      // Event listener untuk tombol/link Info SiPintar
+      if (infoSiPintarButton) {
+        infoSiPintarButton.addEventListener('click', function(event) {
+          event.preventDefault(); // Mencegah link '#' melakukan navigasi
+          showWelcomePopup();
         });
-      }, 1000);
+      }
+      // --- Akhir Bagian Pop-up Selamat Datang ---
+
+      // (Kode JavaScript Anda yang sudah ada untuk Achievement dan Kalender tetap di sini)
+      // ...
+      // Achievement System Simulation
+      document.querySelectorAll('.achievement-item').forEach(item => {
+        const target = parseInt(item.getAttribute('data-target'));
+        const progressId = item.getAttribute('data-progress-id');
+        const textId = item.getAttribute('data-text-id');
+
+        const randomProgress = Math.floor(Math.random() * (target + 1)); 
+        
+        const progressBar = document.getElementById(progressId);
+        const textSpan = document.getElementById(textId);
+        
+        if(progressBar && textSpan) {
+            progressBar.style.width = `${(randomProgress/target)*100}%`;
+            textSpan.textContent = textSpan.textContent.replace(/\(\d+\/\d+\)/, `(${randomProgress}/${target})`);
+        }
+      });
 
       // Kalender Edukatif
       const daysOfWeek = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
@@ -143,33 +337,38 @@
                       "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
 
       const facts = [
-        "💡 Tahukah kamu? Bumi berputar 1670 km/jam!",
-        "📚 Hari ini hari Pendidikan Nasional!",
-        "🐳 Paus biru adalah hewan terbesar di dunia",
-        "🚀 Roket Saturn V adalah kendaraan paling kuat yang pernah dibuat manusia!",
-        "🌋 Gunung Tambora pernah meletus begitu dahsyat hingga menyebabkan 'tahun tanpa musim panas' pada 1816.",
-        "🐝 Lebah dapat mengenali wajah manusia, mirip seperti cara kita mengenali wajah!",
-        "🌕 Permukaan bulan punya jejak kaki yang akan bertahan jutaan tahun karena tidak ada angin atau hujan.",
-        "🌲 Hutan Amazon menghasilkan 20% dari oksigen dunia.",
-        "🦑 Cumi-cumi raksasa punya mata sebesar bola basket!",
-        "📱 Lebih banyak orang di dunia yang punya akses ke ponsel daripada ke toilet bersih."
+        "💡 Tahukah kamu? Bumi berputar dengan kecepatan sekitar 1.670 km/jam di khatulistiwa!",
+        "📚 Pendidikan adalah kunci untuk membuka dunia, sebuah paspor menuju kebebasan.",
+        "🐳 Paus biru adalah hewan terbesar yang pernah ada di Bumi, lebih besar dari dinosaurus terbesar sekalipun!",
+        "🚀 Roket Saturn V yang membawa manusia ke Bulan adalah mesin paling kuat yang pernah dibuat.",
+        "🌋 Letusan Gunung Tambora pada tahun 1815 adalah salah satu letusan gunung berapi terbesar dalam sejarah.",
+        "🐝 Lebah madu berkomunikasi dengan tarian untuk memberitahu lokasi sumber makanan.",
+        "🌕 Jejak kaki astronot di Bulan akan tetap ada selama jutaan tahun karena tidak ada angin atau erosi.",
+        "🌲 Hutan Amazon menghasilkan sekitar 20% oksigen di atmosfer Bumi.",
+        "🦑 Mata cumi-cumi kolosal bisa sebesar bola basket, mata terbesar di dunia hewan!",
+        "📱 Jumlah ponsel di dunia kini melebihi jumlah manusia.",
+        "💧 Air menutupi sekitar 71% permukaan Bumi.",
+        "🧠 Otak manusia menghasilkan listrik yang cukup untuk menyalakan bola lampu kecil.",
+        "☀️ Cahaya Matahari membutuhkan waktu sekitar 8 menit 20 detik untuk sampai ke Bumi."
       ];
 
       const today = new Date();
-
       const dayName = daysOfWeek[today.getDay()];
       const date = today.getDate();
       const monthName = months[today.getMonth()];
       const year = today.getFullYear();
 
-      // Tampilkan format: "Jumat, 23 Mei 2025"
-      document.getElementById('days-month-year').textContent = 
-        `${dayName}, ${date} ${monthName} ${year}`;
+      const calendarDisplay = document.getElementById('days-month-year');
+      if(calendarDisplay) {
+        calendarDisplay.textContent = `${dayName}, ${date} ${monthName} ${year}`;
+      }
 
-      // Tampilkan fakta hari ini
-      document.getElementById('fun-fact').textContent = 
-        facts[date % facts.length];
+      const funFactDisplay = document.getElementById('fun-fact');
+      if(funFactDisplay) {
+        funFactDisplay.textContent = facts[date % facts.length];
+      }
     });
-  </script>
+</script>
+
 </body>
 </html>
