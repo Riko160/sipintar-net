@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IPA Kelas 6 - SiPintar Net</title>
+  <link rel="icon" type="image/png" href="../../../assets/img/karakter/logo3.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    /* CSS untuk breadcrumb (mengikuti contoh Anda) */
+    .breadcrumb-container {
+        padding: 15px 0;
+        margin-bottom: 10px;
+        font-size: 0.95em;
+        border-bottom: 1px solid #eee;
+    }
+    .breadcrumb-container a {
+        text-decoration: none;
+        color: #007bff;
+    }
+    .breadcrumb-container a:hover {
+        text-decoration: underline;
+    }
+    .breadcrumb-container span {
+        color: #6c757d;
+    }
+
+    /* CSS untuk materi-section dan elemen di dalamnya (mengikuti contoh Anda) */
+    .materi-section {
+        margin-bottom: 30px;
+        padding: 25px;
+        background: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        line-height: 1.8;
+    }
+    .materi-section h2 { /* Judul Topik Utama */
+        color: #fd7e14; /* Warna Oranye untuk IPA */
+        border-bottom: 2px solid #fd7e14;
+        padding-bottom: 10px;
+        margin-top: 0;
+        font-size: 1.8em;
+    }
+    .materi-section h3 { /* Sub-Judul dalam Topik */
+        color: #333;
+        font-size: 1.4em;
+        margin-top: 25px;
+        margin-bottom: 15px;
+        padding-left: 10px;
+        border-left: 4px solid #fd7e14; /* Aksen Oranye untuk IPA */
+    }
+    .materi-section p {
+        margin-bottom: 15px;
+        text-align: justify;
+    }
+    .materi-section ul {
+        list-style-position: outside;
+        padding-left: 25px;
+        margin-bottom: 20px;
+    }
+    .materi-section ul li {
+        margin-bottom: 12px;
+    }
+    .materi-section ul ul {
+        margin-top: 10px;
+        list-style-type: circle;
+    }
+    .contoh-ilustrasi { 
+        font-style: normal; 
+        color: #555;
+        margin: 20px 0;
+        padding: 15px 20px;
+        border-left: 4px solid #ffc107; 
+        background-color: #fff9e6;
+        border-radius: 0 4px 4px 0;
+    }
+    .contoh-ilustrasi strong {
+        color: #e67700; 
+    }
+    .aktivitas-belajar { 
+        background-color: #e7f5ff;
+        border-left: 4px solid #1c7ed6; 
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 0 4px 4px 0;
+    }
+    .aktivitas-belajar h4 {
+        margin-top: 0;
+        color: #1c7ed6;
+    }
+    .tips-belajar { 
+        background-color: #fff0f6; 
+        border-left: 4px solid #e64980; 
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 0 4px 4px 0;
+    }
+    .tips-belajar h4 {
+        margin-top: 0;
+        color: #c2255c; 
+    }
+     .diagram-wrapper { /* Untuk menampung gambar diagram agar responsif */
+        text-align: center;
+        margin: 15px 0;
+    }
+    .diagram-wrapper img {
+        max-width: 100%;
+        height: auto;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="../../../assets/img/karakter/logo3.png" alt="SiPintar Logo" class="logo">
+      <h2>SiPintar Net</h2>
+    </div>
+    <nav>
+      <a href="../../../index.html">Beranda</a>
+      <a href="../materi.html" class="active">Materi</a>
+      <a href="../../kuis/kuis.html">Kuis</a>
+      <a href="../../video.html">Video</a>
+      <a href="../../tentang.html">Tentang Kami</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb-container">
+      <a href="../materi.html">Pilih Kelas</a> &nbsp;&gt;&nbsp;
+      <a href="pilih-mapel-kelas6.html">Kelas 6</a> &nbsp;&gt;&nbsp;
+      <span>Ilmu Pengetahuan Alam (IPA)</span>
+    </div>
+
+    <section class="page-header">
+      <h1>Ilmu Pengetahuan Alam (IPA) Kelas 6 <i class="fas fa-user-astronaut"></i></h1>
+      <p>Selamat datang di penjelajahan IPA terakhir di Sekolah Dasar! Kita akan mengungkap rahasia perkembangbiakan, kelistrikan, magnet, hingga keajaiban tata surya.</p>
+    </section>
+
+    <div class="materi-section" id="perkembangbiakan-k6">
+        <h2>1. Perkembangbiakan Makhluk Hidup</h2>
+        <p>Semua makhluk hidup berkembang biak untuk melestarikan jenisnya agar tidak punah. Cara berkembang biak tumbuhan, hewan, dan perkembangan manusia memiliki keunikan masing-masing yang akan kita pelajari secara mendalam.</p>
+        
+        <h3>1.1 Perkembangbiakan Tumbuhan</h3>
+        <p>Tumbuhan dapat berkembang biak secara generatif (melalui perkawinan) dan vegetatif (tanpa perkawinan).</p>
+        <ul>
+            <li><strong>Perkembangbiakan Generatif Tumbuhan (Melalui Bunga <i class="fas fa-fan"></i>):</strong>
+                <ul>
+                    <li><strong>Bagian-bagian Bunga Sempurna:</strong> Kelopak (melindungi kuncup), mahkota (menarik serangga), benang sari (alat kelamin jantan, menghasilkan serbuk sari), dan putik (alat kelamin betina, terdapat bakal buah dan bakal biji).</li>
+                    <li><strong>Proses Penyerbukan (Polinasi):</strong> Peristiwa jatuhnya serbuk sari di kepala putik. Penyerbukan dapat dibantu oleh angin (anemogami), hewan (zoidiogami: serangga/entomogami, burung/ornitogami, kelelawar/kiropterogami), air (hidrogami), atau manusia (antropogami).</li>
+                    <li><strong>Proses Pembuahan:</strong> Setelah penyerbukan, terjadi peleburan sel kelamin jantan (dari serbuk sari) dengan sel kelamin betina (di dalam bakal biji), menghasilkan zigot yang akan berkembang menjadi embrio (calon tumbuhan baru). Bakal buah berkembang menjadi buah, bakal biji menjadi biji.</li>
+                </ul>
+            </li>
+            <li><strong>Perkembangbiakan Vegetatif Tumbuhan:</strong>
+                <ul>
+                    <li><strong>Vegetatif Alami:</strong>
+                        <ul>
+                            <li><strong>Tunas:</strong> Muncul pada batang (pisang, bambu) atau daun (cocor bebek - tunas adventif).</li>
+                            <li><strong>Umbi:</strong> Umbi batang (kentang, ubi jalar), umbi lapis (bawang merah, bawang putih), umbi akar (singkong, wortel - sebagai penyimpan makanan, bukan alat utama perkembangbiakan vegetatif alami pada wortel/singkong, lebih ke stek).</li>
+                            <li><strong>Akar Tinggal (Rizoma):</strong> Batang yang tumbuh menjalar di dalam tanah (jahe, kunyit, lengkuas, temulawak).</li>
+                            <li><strong>Geragih (Stolon):</strong> Batang yang tumbuh menjalar di atas permukaan tanah (stroberi, rumput teki).</li>
+                            <li><strong>Spora:</strong> Pada tumbuhan paku, lumut, dan jamur.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Vegetatif Buatan (dengan bantuan manusia):</strong>
+                        <ul>
+                            <li><strong>Cangkok:</strong> Mengupas kulit cabang, diberi tanah, lalu dibungkus hingga keluar akar. (Contoh: mangga, jambu).</li>
+                            <li><strong>Stek:</strong> Memotong bagian tumbuhan (batang, daun, atau akar) lalu ditanam. (Contoh: singkong, mawar, tebu - stek batang).</li>
+                            <li><strong>Okulasi (Menempel):</strong> Menempelkan mata tunas satu tanaman ke batang tanaman lain yang sejenis.</li>
+                            <li><strong>Menyambung (Mengenten):</strong> Menggabungkan batang bawah dan batang atas dari dua tanaman berbeda yang sejenis.</li>
+                            <li><strong>Merunduk:</strong> Merundukkan cabang tanaman ke dalam tanah hingga tumbuh akar.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>1.2 Perkembangbiakan Hewan</h3>
+        <p>Hewan juga berkembang biak secara generatif dan beberapa secara vegetatif.</p>
+        <ul>
+            <li><strong>Perkembangbiakan Generatif Hewan:</strong> Melibatkan pertemuan sel kelamin jantan (sperma) dan sel kelamin betina (ovum/sel telur) yang disebut pembuahan.
+                <ul>
+                    <li><strong>Ovipar (Bertelur) <i class="fas fa-egg"></i>:</strong> Hewan yang berkembang biak dengan cara bertelur. Embrio tumbuh di dalam telur di luar tubuh induk. Contoh: ayam, burung, ikan, penyu, serangga.</li>
+                    <li><strong>Vivipar (Melahirkan/Beranak) <i class="fas fa-baby-carriage"></i>:</strong> Hewan yang berkembang biak dengan cara melahirkan. Embrio tumbuh dan berkembang di dalam rahim induk, mendapat makanan dari induk melalui plasenta. Contoh: kucing, sapi, kuda, paus, manusia.</li>
+                    <li><strong>Ovovivipar (Bertelur-Melahirkan):</strong> Hewan yang bertelur, tetapi telur menetas di dalam tubuh induk, sehingga seolah-olah melahirkan anak. Embrio mendapat makanan dari cadangan makanan dalam telur. Contoh: beberapa jenis ular (ular boa, ular kadut), ikan hiu tertentu, bunglon.</li>
+                </ul>
+            </li>
+            <li><strong>Perkembangbiakan Vegetatif Hewan (pada hewan tingkat rendah):</strong>
+                <ul>
+                    <li><strong>Tunas:</strong> Membentuk tunas pada tubuhnya yang kemudian lepas menjadi individu baru. Contoh: Hydra, Porifera (hewan spons).</li>
+                    <li><strong>Fragmentasi:</strong> Memotong bagian tubuhnya, dan setiap potongan dapat tumbuh menjadi individu baru. Contoh: Planaria (cacing pipih), bintang laut.</li>
+                </ul>
+            </li>
+        </ul>
+        
+        <h3>1.3 Perkembangan Manusia: Masa Pubertas</h3>
+        <p>Pubertas adalah masa transisi dari anak-anak menjadi dewasa, ditandai dengan matangnya organ reproduksi dan perubahan fisik serta psikis.</p>
+        <ul>
+            <li><strong>Pubertas pada Laki-laki:</strong>
+                <ul>
+                    <li><strong>Ciri-ciri Primer (Organ Reproduksi Matang):</strong> Mimpi basah (keluarnya sperma saat tidur).</li>
+                    <li><strong>Ciri-ciri Sekunder (Perubahan Fisik):</strong> Suara menjadi lebih berat dan besar (jakun mulai tampak), tumbuh rambut di ketiak dan sekitar kemaluan, dada membidang, bahu melebar, otot-otot mulai terbentuk, kadang tumbuh kumis/jambang.</li>
+                </ul>
+            </li>
+            <li><strong>Pubertas pada Perempuan:</strong>
+                <ul>
+                    <li><strong>Ciri-ciri Primer (Organ Reproduksi Matang):</strong> Mengalami menstruasi (haid) pertama.</li>
+                    <li><strong>Ciri-ciri Sekunder (Perubahan Fisik):</strong> Payudara mulai membesar, pinggul melebar, tumbuh rambut di ketiak dan sekitar kemaluan, suara menjadi lebih merdu (meskipun tidak selalu signifikan).</li>
+                </ul>
+            </li>
+            <li><strong>Perubahan Psikis (Umum pada Laki-laki dan Perempuan):</strong> Mulai tertarik pada lawan jenis, emosi lebih sensitif dan mudah berubah, mencari identitas diri, ingin lebih mandiri.</li>
+            <li><strong>Pentingnya Menjaga Kebersihan dan Kesehatan Reproduksi pada Masa Pubertas:</strong> Mandi teratur, mengganti pakaian dalam setiap hari, menggunakan pembalut yang bersih saat menstruasi (bagi perempuan), menjaga pergaulan yang sehat.</li>
+        </ul>
+        
+        <div class="tips-belajar">
+            <h4><i class="fas fa-lightbulb"></i> Memahami Pubertas</h4>
+            <p>Pubertas adalah masa yang normal dialami setiap orang. Jangan ragu untuk bertanya kepada orang tua atau guru jika ada hal yang membuatmu bingung atau khawatir tentang perubahan pada tubuhmu.</p>
+        </div>
+    </div>
+
+    <div class="materi-section" id="listrik-magnet-k6"> <h2>2. Energi Listrik, Rangkaian Listrik, dan Magnet</h2>
+        <p>Listrik dan magnet adalah dua kekuatan alam yang sangat berpengaruh dalam kehidupan modern. Kita akan mempelajari sumber energi listrik, cara membuat rangkaian listrik, dan sifat-sifat magnet yang menakjubkan.</p>
+
+        <h3>2.1 Sumber-sumber Energi Listrik <i class="fas fa-plug"></i></h3>
+        <p>Energi listrik yang kita gunakan berasal dari berbagai sumber, yang mengubah bentuk energi lain menjadi energi listrik:</p>
+        <ul>
+            <li><strong>Baterai dan Aki:</strong> Menyimpan energi kimia yang diubah menjadi energi listrik. Digunakan pada senter, mainan, ponsel, kendaraan bermotor.</li>
+            <li><strong>Dinamo dan Generator:</strong> Alat yang mengubah energi gerak menjadi energi listrik (prinsip induksi elektromagnetik). Dinamo sepeda, generator di pembangkit listrik.</li>
+            <li><strong>Pembangkit Listrik:</strong>
+                <ul>
+                    <li><strong>PLTA (Pembangkit Listrik Tenaga Air):</strong> Memanfaatkan energi gerak air untuk memutar turbin generator.</li>
+                    <li><strong>PLTU (Pembangkit Listrik Tenaga Uap):</strong> Memanfaatkan uap panas (dari pembakaran batu bara/minyak/gas atau panas bumi) untuk memutar turbin.</li>
+                    <li><strong>PLTS (Pembangkit Listrik Tenaga Surya):</strong> Menggunakan panel surya untuk mengubah energi cahaya matahari menjadi energi listrik.</li>
+                    <li><strong>PLTN (Pembangkit Listrik Tenaga Nuklir):</strong> Memanfaatkan energi panas dari reaksi nuklir.</li>
+                    <li><strong>PLTB (Pembangkit Listrik Tenaga Bayu/Angin):</strong> Menggunakan kincir angin besar untuk memutar generator.</li>
+                </ul>
+            </li>
+        </ul>
+        
+        <h3>2.2 Komponen dan Jenis Rangkaian Listrik Sederhana</h3>
+        <ul>
+            <li><strong>Komponen Utama:</strong>
+                <ul>
+                    <li><strong>Sumber Listrik:</strong> Penyedia energi listrik (misalnya baterai).</li>
+                    <li><strong>Kabel (Konduktor):</strong> Sebagai penghantar arus listrik.</li>
+                    <li><strong>Sakelar (Switch):</strong> Alat untuk memutus dan menyambung arus listrik.</li>
+                    <li><strong>Beban Listrik:</strong> Alat yang menggunakan energi listrik (misalnya lampu, bel).</li>
+                </ul>
+            </li>
+            <li><strong>Rangkaian Terbuka dan Tertutup:</strong>
+                <ul>
+                    <li><strong>Rangkaian Tertutup:</strong> Rangkaian yang semua komponennya terhubung sehingga arus listrik dapat mengalir (lampu menyala).</li>
+                    <li><strong>Rangkaian Terbuka:</strong> Rangkaian yang terputus (misalnya sakelar terbuka) sehingga arus listrik tidak dapat mengalir (lampu mati).</li>
+                </ul>
+            </li>
+            <li><strong>Rangkaian Listrik Seri:</strong>
+                <ul>
+                    <li>Komponen listrik disusun secara berderet/berurutan.</li>
+                    <li>Arus listrik mengalir melalui satu jalur saja.</li>
+                    <li><strong>Ciri-ciri:</strong> Jika salah satu lampu mati/dicabut, lampu lain ikut mati. Nyala lampu cenderung lebih redup jika jumlah lampu banyak (tegangan terbagi). Hemat kabel.</li>
+                    <li>Contoh: Lampu senter.</li>
+                </ul>
+                <div class="diagram-wrapper">
+                    <p>[Contoh Skema Rangkaian Seri: Sumber -- Kabel -- Lampu1 -- Lampu2 -- Kabel -- Sakelar -- Sumber]</p>
+                </div>
+            </li>
+            <li><strong>Rangkaian Listrik Paralel:</strong>
+                <ul>
+                    <li>Komponen listrik disusun secara bercabang/sejajar.</li>
+                    <li>Arus listrik memiliki lebih dari satu jalur untuk mengalir.</li>
+                    <li><strong>Ciri-ciri:</strong> Jika salah satu lampu mati/dicabut, lampu lain tetap menyala. Nyala lampu lebih terang dan sama terangnya (tegangan sama). Boros kabel.</li>
+                    <li>Contoh: Instalasi listrik di rumah.</li>
+                </ul>
+                <div class="diagram-wrapper">
+                     <p>[Contoh Skema Rangkaian Paralel: Sumber -- Sakelar -- Titik Cabang -- (Kabel-Lampu1) || (Kabel-Lampu2) -- Titik Gabung -- Sumber]</p>
+                </div>
+            </li>
+        </ul>
+        
+        <h3>2.3 Konduktor dan Isolator Listrik</h3>
+        <ul>
+            <li><strong>Konduktor Listrik:</strong> Bahan yang dapat menghantarkan arus listrik dengan baik. Contoh: logam (tembaga, besi, aluminium, perak, emas), air (yang tidak murni), grafit (isi pensil).</li>
+            <li><strong>Isolator Listrik:</strong> Bahan yang tidak dapat atau sulit menghantarkan arus listrik. Contoh: karet, plastik, kayu kering, kaca, kain kering, udara kering.</li>
+            <li><strong>Pemanfaatan:</strong> Kabel listrik bagian dalamnya terbuat dari tembaga (konduktor) dan dilapisi plastik (isolator). Gagang obeng terbuat dari plastik (isolator).</li>
+        </ul>
+
+        <h3>2.4 Sifat-sifat Magnet dan Cara Membuatnya <i class="fas fa-magnet"></i></h3>
+        <ul>
+            <li><strong>Pengertian Magnet:</strong> Benda yang memiliki kemampuan menarik benda-benda lain yang terbuat dari logam tertentu (besi, baja, nikel, kobalt).</li>
+            <li><strong>Benda Magnetis dan Non-magnetis:</strong> Benda yang dapat ditarik magnet disebut feromagnetik. Benda yang tidak dapat ditarik magnet disebut non-magnetis.</li>
+            <li><strong>Sifat-sifat Magnet:</strong>
+                <ul>
+                    <li>Memiliki dua kutub: kutub utara (U) dan kutub selatan (S).</li>
+                    <li>Kutub senama (U-U atau S-S) akan tolak-menolak.</li>
+                    <li>Kutub tidak senama (U-S) akan tarik-menarik.</li>
+                    <li>Gaya tarik magnet terkuat ada di kutub-kutubnya.</li>
+                    <li>Gaya magnet dapat menembus benda tipis non-magnetis (misalnya kertas, kaca tipis).</li>
+                    <li>Memiliki medan magnet: daerah di sekitar magnet yang masih dipengaruhi gaya magnet.</li>
+                </ul>
+            </li>
+            <li><strong>Cara Membuat Magnet Sederhana:</strong>
+                <ul>
+                    <li><strong>Digosok Searah:</strong> Menggosokkan sebatang besi atau baja dengan magnet tetap secara searah berulang kali. Ujung terakhir yang digosok akan menjadi kutub yang berlawanan dengan kutub magnet yang menggosok.</li>
+                    <li><strong>Induksi (Didekatkan):</strong> Mendekatkan sebatang besi atau baja dengan magnet kuat tanpa menyentuh. Ujung besi/baja yang dekat dengan kutub magnet akan menjadi kutub berlawanan. Sifat kemagnetan bersifat sementara.</li>
+                    <li><strong>Dialiri Arus Listrik (Elektromagnet):</strong> Melilitkan kawat berarus listrik pada sebatang besi atau baja. Kutub magnet ditentukan oleh arah arus listrik (kaidah tangan kanan). Sifat kemagnetan bersifat sementara (hilang jika arus diputus).</li>
+                </ul>
+            </li>
+             <li><strong>Kegunaan Magnet:</strong> Kompas (penunjuk arah), dinamo, bel listrik, pengunci pintu kulkas, ujung obeng, alat pengangkat besi.</li>
+        </ul>
+        
+        <h3>2.5 Cara Menghemat Energi Listrik dan Bahaya Listrik</h3>
+        <ul>
+            <li><strong>Menghemat Listrik:</strong> Matikan lampu dan alat elektronik jika tidak digunakan, gunakan peralatan hemat energi, manfaatkan cahaya alami.</li>
+            <li><strong>Bahaya Listrik:</strong> Dapat menyebabkan sengatan (kesetrum), kebakaran. Hindari menyentuh peralatan listrik dengan tangan basah, jangan memasukkan benda logam ke stopkontak, gunakan peralatan listrik yang standar dan tidak rusak.</li>
+        </ul>
+        
+        <div class="aktivitas-belajar">
+            <h4><i class="fas fa-bolt"></i> Ayo Merangkai dan Bereksperimen!</h4>
+            <p>1. <strong>Buat Rangkaian Sederhana:</strong> Dengan baterai, kabel, dan lampu kecil, cobalah membuat rangkaian seri dan paralel. Amati perbedaannya!</p>
+            <p>2. <strong>Membuat Elektromagnet:</strong> Lilitkan kawat tembaga pada sebuah paku besar, lalu hubungkan ujung-ujung kawat ke baterai. Dekatkan paku ke klip kertas atau jarum. Apa yang terjadi?</p>
+        </div>
+    </div>
+    
+    <div class="materi-section" id="tata-surya-k6"> <h2>3. Sistem Tata Surya dan Pergerakan Benda Langit <i class="fas fa-globe-americas"></i></h2>
+        <p>Kita hidup di planet Bumi, yang merupakan bagian kecil dari sistem tata surya yang sangat luas. Mari kita jelajahi Matahari, planet-planet, dan benda langit lainnya, serta pergerakan mereka yang menakjubkan.</p>
+
+        <h3>3.1 Anggota Sistem Tata Surya</h3>
+        <ul>
+            <li><strong>Matahari <i class="fas fa-sun"></i>:</strong> Bintang yang menjadi pusat tata surya kita. Merupakan sumber energi panas dan cahaya bagi semua planet.</li>
+            <li><strong>Planet-planet:</strong> Benda langit yang tidak memancarkan cahaya sendiri dan beredar mengelilingi Matahari (berevolusi). Urutan planet dari yang terdekat dengan Matahari:
+                <ol>
+                    <li><strong>Merkurius:</strong> Planet terkecil dan terdekat Matahari, sangat panas di siang hari dan sangat dingin di malam hari.</li>
+                    <li><strong>Venus:</strong> Disebut Bintang Fajar atau Bintang Senja, planet terpanas karena atmosfer tebalnya memerangkap panas.</li>
+                    <li><strong>Bumi <i class="fas fa-globe-asia"></i>:</strong> Planet kita, satu-satunya yang diketahui memiliki kehidupan. Memiliki satu satelit alami, yaitu Bulan.</li>
+                    <li><strong>Mars:</strong> Dijuluki Planet Merah karena permukaannya yang kemerahan. Memiliki gunung tertinggi (Olympus Mons) dan lembah terdalam.</li>
+                    <li><strong>Jupiter:</strong> Planet terbesar di tata surya, merupakan planet gas raksasa. Memiliki banyak satelit dan Bintik Merah Raksasa (badai besar).</li>
+                    <li><strong>Saturnus:</strong> Dikenal karena cincinnya yang indah, yang terbuat dari bongkahan es dan batu. Juga planet gas raksasa.</li>
+                    <li><strong>Uranus:</strong> Planet gas raksasa berwarna biru kehijauan, berotasi miring.</li>
+                    <li><strong>Neptunus:</strong> Planet terjauh dari Matahari, juga planet gas raksasa berwarna biru, memiliki angin yang sangat kencang.</li>
+                </ol>
+            </li>
+            <li><strong>Planet Dalam dan Planet Luar:</strong> Planet Dalam (Merkurius, Venus, Bumi, Mars) terletak di antara Matahari dan sabuk asteroid. Planet Luar (Jupiter, Saturnus, Uranus, Neptunus) terletak setelah sabuk asteroid.</li>
+            <li><strong>Benda Langit Lainnya:</strong>
+                <ul>
+                    <li><strong>Satelit Alami:</strong> Benda langit yang mengorbit planet (contoh: Bulan mengorbit Bumi).</li>
+                    <li><strong>Asteroid (Planetoid):</strong> Bongkahan batu dan logam yang mengorbit Matahari, sebagian besar berada di sabuk asteroid antara Mars dan Jupiter.</li>
+                    <li><strong>Meteoroid:</strong> Batuan kecil di luar angkasa. <strong>Meteor (Bintang Jatuh):</strong> Meteoroid yang masuk atmosfer Bumi dan terbakar. <strong>Meteorit:</strong> Sisa meteor yang sampai ke permukaan Bumi.</li>
+                    <li><strong>Komet (Bintang Berekor):</strong> Bongkahan es, debu, dan gas yang mengorbit Matahari dalam lintasan sangat lonjong. Ekor komet selalu menjauhi Matahari.</li>
+                </ul>
+            </li>
+        </ul>
+        
+        <h3>3.2 Rotasi Bumi dan Akibatnya</h3>
+        <ul>
+            <li><strong>Rotasi Bumi:</strong> Perputaran Bumi pada porosnya (sumbunya) dari arah barat ke timur. Waktu satu kali rotasi adalah sekitar 23 jam 56 menit (dibulatkan 24 jam atau satu hari).</li>
+            <li><strong>Akibat Rotasi Bumi:</strong>
+                <ul>
+                    <li><strong>Terjadinya Siang dan Malam:</strong> Bagian Bumi yang menghadap Matahari mengalami siang, yang membelakangi mengalami malam.</li>
+                    <li><strong>Gerak Semu Harian Matahari:</strong> Matahari seolah-olah terbit di timur dan terbenam di barat.</li>
+                    <li><strong>Perbedaan Waktu Lokal:</strong> Terjadinya perbedaan waktu di berbagai tempat di Bumi (zona waktu).</li>
+                    <li>(Lanjutan) Pembelokan arah angin dan arus laut.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>3.3 Revolusi Bumi dan Akibatnya</h3>
+        <ul>
+            <li><strong>Revolusi Bumi:</strong> Peredaran Bumi mengelilingi Matahari dalam orbit berbentuk elips. Waktu satu kali revolusi adalah sekitar 365,25 hari (satu tahun). Kelebihan 0,25 hari dikumpulkan menjadi 1 hari setiap 4 tahun (tahun kabisat, Februari 29 hari).</li>
+            <li><strong>Akibat Revolusi Bumi (dikombinasikan dengan kemiringan sumbu rotasi Bumi sebesar 23,5°):</strong>
+                <ul>
+                    <li><strong>Terjadinya Perubahan Musim:</strong> Di belahan bumi utara dan selatan (musim semi, panas, gugur, dingin). Indonesia yang di khatulistiwa mengalami dua musim (kemarau dan penghujan) karena pengaruh angin muson.</li>
+                    <li><strong>Gerak Semu Tahunan Matahari:</strong> Matahari seolah-olah bergerak dari khatulistiwa ke Garis Balik Utara, kembali ke khatulistiwa, lalu ke Garis Balik Selatan, dan kembali lagi ke khatulistiwa sepanjang tahun.</li>
+                    <li><strong>Perbedaan Lama Waktu Siang dan Malam:</strong> Di beberapa daerah, lama siang dan malam bisa berbeda-beda tergantung musim.</li>
+                    <li><strong>Terlihatnya Rasi Bintang yang Berbeda:</strong> Posisi Bumi yang berubah saat mengelilingi Matahari menyebabkan kita melihat rasi bintang yang berbeda-beda di langit malam sepanjang tahun.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>3.4 Pergerakan Bulan dan Akibatnya <i class="far fa-moon"></i></h3>
+        <ul>
+            <li><strong>Gerakan Bulan:</strong> Bulan melakukan tiga gerakan sekaligus: rotasi (berputar pada porosnya), revolusi (mengelilingi Bumi), dan bersama Bumi mengelilingi Matahari. Kala rotasi Bulan sama dengan kala revolusinya, sehingga permukaan Bulan yang menghadap Bumi selalu sama.</li>
+            <li><strong>Akibat Pergerakan Bulan:</strong>
+                <ul>
+                    <li><strong>Fase-fase Bulan:</strong> Perubahan kenampakan Bulan dari Bumi akibat perbedaan posisi Bulan terhadap Matahari dan Bumi. Fase utama: Bulan Baru (tidak terlihat), Sabit Awal, Kuartal Pertama (separuh), Purnama (bulat penuh), Kuartal Ketiga (separuh), Sabit Akhir.</li>
+                    <li><strong>Pasang Surut Air Laut:</strong> Naik turunnya permukaan air laut yang disebabkan oleh gaya gravitasi Bulan dan Matahari terhadap Bumi. Pasang purnama (saat Bulan purnama/baru, gravitasi Bulan & Matahari searah) dan pasang perbani (saat Bulan kuartal pertama/ketiga, gravitasi Bulan & Matahari tegak lurus).</li>
+                </ul>
+            </li>
+        </ul>
+        
+        <h3>3.5 Gerhana Matahari dan Gerhana Bulan</h3>
+        <ul>
+            <li><strong>Gerhana Matahari:</strong> Terjadi ketika Matahari, Bulan, dan Bumi berada dalam satu garis lurus, dengan Bulan di antara Matahari dan Bumi. Cahaya Matahari ke Bumi terhalang bayangan Bulan. Terjadi pada fase Bulan Baru.
+                <ul>
+                    <li><strong>Gerhana Matahari Total:</strong> Seluruh piringan Matahari tertutup piringan Bulan (terjadi di daerah umbra Bulan).</li>
+                    <li><strong>Gerhana Matahari Sebagian:</strong> Sebagian piringan Matahari tertutup piringan Bulan (terjadi di daerah penumbra Bulan).</li>
+                    <li><strong>Gerhana Matahari Cincin:</strong> Piringan Bulan menutupi bagian tengah piringan Matahari, menyisakan cahaya di tepinya seperti cincin (terjadi saat Bulan berada pada titik terjauh dari Bumi).</li>
+                </ul>
+            </li>
+            <li><strong>Gerhana Bulan:</strong> Terjadi ketika Matahari, Bumi, dan Bulan berada dalam satu garis lurus, dengan Bumi di antara Matahari dan Bulan. Bulan masuk ke dalam bayangan Bumi. Terjadi pada fase Bulan Purnama.
+                <ul>
+                    <li><strong>Gerhana Bulan Total:</strong> Seluruh piringan Bulan masuk ke dalam bayangan inti (umbra) Bumi. Bulan tampak kemerahan.</li>
+                    <li><strong>Gerhana Bulan Sebagian:</strong> Sebagian piringan Bulan masuk ke umbra Bumi, sebagian lagi di penumbra.</li>
+                    <li><strong>Gerhana Bulan Penumbra:</strong> Seluruh piringan Bulan masuk ke bayangan kabur (penumbra) Bumi. Bulan tampak lebih redup.</li>
+                </ul>
+            </li>
+        </ul>
+        
+        <h3>3.6 Kalender Masehi dan Kalender Hijriah</h3>
+        <ul>
+            <li><strong>Kalender Masehi (Syamsiah):</strong> Didasarkan pada peredaran Bumi mengelilingi Matahari (revolusi Bumi). Satu tahun terdiri dari 365 atau 366 hari (tahun kabisat).</li>
+            <li><strong>Kalender Hijriah (Komariyah):</strong> Didasarkan pada peredaran Bulan mengelilingi Bumi (revolusi Bulan). Satu tahun terdiri dari 354 atau 355 hari.</li>
+        </ul>
+
+        <div class="aktivitas-belajar">
+            <h4><i class="fas fa-rocket"></i> Jelajahi Antariksa!</h4>
+            <p>1. <strong>Buat Model Tata Surya:</strong> Gunakan bola-bola berbagai ukuran atau bahan lain untuk membuat model sederhana tata surya.</p>
+            <p>2. <strong>Simulasi Gerhana:</strong> Dengan senter (Matahari), bola kasti (Bumi), dan bola pingpong (Bulan), coba simulasikan bagaimana gerhana matahari dan gerhana bulan bisa terjadi.</p>
+            <p>3. <strong>Amati Fase Bulan:</strong> Selama satu bulan, amati perubahan bentuk Bulan setiap malam (jika cuaca cerah). Catat atau gambar perubahannya!</p>
+        </div>
+    </div>
+
+    </main>
+
+  <footer>
+    &copy; 2025 SiPintar Net - Belajar Jadi Asyik
+  </footer>
+</body>
+</html>

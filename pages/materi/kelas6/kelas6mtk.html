@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matematika Kelas 6 - SiPintar Net</title>
+  <link rel="icon" type="image/png" href="../../../assets/img/karakter/logo3.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <style>
+    /* CSS untuk breadcrumb (mengikuti contoh Anda) */
+    .breadcrumb-container {
+        padding: 15px 0;
+        margin-bottom: 10px;
+        font-size: 0.95em;
+        border-bottom: 1px solid #eee;
+    }
+    .breadcrumb-container a {
+        text-decoration: none;
+        color: #007bff;
+    }
+    .breadcrumb-container a:hover {
+        text-decoration: underline;
+    }
+    .breadcrumb-container span {
+        color: #6c757d;
+    }
+
+    /* CSS untuk materi-section dan elemen di dalamnya (mengikuti contoh Anda) */
+    .materi-section {
+        margin-bottom: 30px;
+        padding: 25px;
+        background: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        line-height: 1.8;
+    }
+    .materi-section h2 { /* Judul Topik Utama */
+        color: #28a745; /* Warna Hijau untuk Matematika */
+        border-bottom: 2px solid #28a745;
+        padding-bottom: 10px;
+        margin-top: 0;
+        font-size: 1.8em;
+    }
+    .materi-section h3 { /* Sub-Judul dalam Topik */
+        color: #333;
+        font-size: 1.4em;
+        margin-top: 25px;
+        margin-bottom: 15px;
+        padding-left: 10px;
+        border-left: 4px solid #28a745; /* Aksen Hijau untuk Matematika */
+    }
+    .materi-section p, .materi-section li {
+        margin-bottom: 15px;
+        text-align: justify;
+    }
+    .materi-section ul {
+        list-style-position: outside;
+        padding-left: 25px;
+        margin-bottom: 20px;
+    }
+    .materi-section ul ul {
+        margin-top: 10px;
+        list-style-type: circle;
+    }
+    .contoh-ilustrasi { 
+        font-style: normal; 
+        color: #555;
+        margin: 20px 0;
+        padding: 15px 20px;
+        border-left: 4px solid #20c997; /* Teal lebih muda */
+        background-color: #e6fcf5;
+        border-radius: 0 4px 4px 0;
+    }
+    .contoh-ilustrasi strong {
+        color: #1a936f; /* Teal lebih tua */
+    }
+    .aktivitas-belajar { 
+        background-color: #e7f5ff;
+        border-left: 4px solid #1c7ed6; /* Biru */
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 0 4px 4px 0;
+    }
+    .aktivitas-belajar h4 {
+        margin-top: 0;
+        color: #1c7ed6;
+    }
+    .tips-belajar { 
+        background-color: #fff8e6;
+        border-left: 4px solid #ffd43b; /* Kuning */
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 0 4px 4px 0;
+    }
+    .tips-belajar h4 {
+        margin-top: 0;
+        color: #e67700; /* Oranye tua */
+    }
+    .rumus-box { 
+        background-color: #f0f0f0;
+        border: 1px dashed #888;
+        padding: 15px;
+        margin: 20px auto; /* Auto margin untuk tengahan jika lebar diatur */
+        width: fit-content; /* Agar box tidak full width */
+        max-width: 90%; /* Maksimum lebar */
+        font-family: 'Courier New', Courier, monospace;
+        text-align: center;
+        font-size: 1.1em;
+        border-radius: 4px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    }
+    .garis-bilangan {
+        margin: 20px 0;
+        text-align: center;
+        font-weight: bold;
+    }
+    .garis-bilangan img { /* Jika menggunakan gambar untuk garis bilangan */
+        max-width: 100%;
+        height: auto;
+    }
+    .table-container {
+        overflow-x: auto; /* Agar tabel bisa di-scroll jika terlalu lebar */
+        margin: 20px 0;
+    }
+    table.data-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    table.data-table th, table.data-table td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+    }
+    table.data-table th {
+        background-color: #f2f2f2;
+        color: #333;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="../../../assets/img/karakter/logo3.png" alt="SiPintar Logo" class="logo">
+      <h2>SiPintar Net</h2>
+    </div>
+    <nav>
+      <a href="../../../index.html">Beranda</a>
+      <a href="../materi.html" class="active">Materi</a>
+      <a href="../../kuis/kuis.html">Kuis</a>
+      <a href="../../video.html">Video</a>
+      <a href="../../tentang.html">Tentang Kami</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb-container">
+      <a href="../materi.html">Pilih Kelas</a> &nbsp;&gt;&nbsp;
+      <a href="pilih-mapel-kelas6.html">Kelas 6</a> &nbsp;&gt;&nbsp;
+      <span>Matematika</span>
+    </div>
+
+    <section class="page-header">
+      <h1>Matematika Kelas 6 <i class="fas fa-graduation-cap"></i></h1>
+      <p>Selamat datang di puncak Matematika Sekolah Dasar! Mari kita kuasai konsep-konsep penting dengan lebih mendalam dan detail sebagai bekal terbaikmu!</p>
+    </section>
+
+    <div class="materi-section" id="bilangan-bulat-k6">
+        <h2>1. Bilangan Bulat (Termasuk Operasi Bilangan Negatif)</h2>
+        <p>Di Kelas 6, kita akan menjelajahi dunia bilangan bulat, yang tidak hanya terdiri dari bilangan positif dan nol, tetapi juga bilangan negatif. Memahami bilangan bulat dan operasinya sangat penting untuk berbagai konsep matematika selanjutnya dan aplikasi dalam kehidupan nyata.</p>
+        
+        <h3>1.1 Mengenal Bilangan Bulat Positif, Nol, dan Negatif</h3>
+        <ul>
+            <li><strong>Definisi Bilangan Bulat:</strong> Himpunan bilangan yang terdiri dari bilangan cacah (0, 1, 2, 3, ...) dan lawan-lawannya (..., -3, -2, -1). Jadi, bilangan bulat mencakup ..., -3, -2, -1, 0, 1, 2, 3, ...</li>
+            <li><strong>Bilangan Bulat Positif:</strong> Bilangan yang lebih besar dari nol (1, 2, 3, ...).</li>
+            <li><strong>Nol (0):</strong> Bilangan netral, tidak positif dan tidak negatif.</li>
+            <li><strong>Bilangan Bulat Negatif:</strong> Bilangan yang lebih kecil dari nol (-1, -2, -3, ...).</li>
+            <li><strong>Garis Bilangan:</strong> Alat visual untuk merepresentasikan bilangan bulat. Bilangan positif terletak di sebelah kanan nol, dan bilangan negatif di sebelah kiri nol. Semakin ke kanan, nilai bilangan semakin besar; semakin ke kiri, nilai bilangan semakin kecil.</li>
+            <div class="garis-bilangan">
+                <p>... &longleftarrow; [-5] [-4] [-3] [-2] [-1] [ 0 ] [+1] [+2] [+3] [+4] [+5] &longrightarrow; ...</p>
+            </div>
+            <li><strong>Aplikasi dalam Kehidupan Sehari-hari:</strong>
+                <ul>
+                    <li><strong>Suhu:</strong> Suhu di bawah 0°C ditulis dengan bilangan negatif (misalnya, -5°C).</li>
+                    <li><strong>Ketinggian/Kedalaman:</strong> Ketinggian di atas permukaan laut adalah positif, kedalaman di bawah permukaan laut adalah negatif.</li>
+                    <li><strong>Untung/Rugi:</strong> Keuntungan bisa direpresentasikan sebagai positif, kerugian sebagai negatif.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>1.2 Membaca, Menulis, Membandingkan, dan Mengurutkan Bilangan Bulat</h3>
+        <ul>
+            <li><strong>Membaca dan Menulis:</strong> "-7" dibaca "negatif tujuh". "+5" atau "5" dibaca "positif lima" atau "lima".</li>
+            <li><strong>Lawan Suatu Bilangan:</strong> Lawan dari bilangan positif adalah bilangan negatif dengan nilai mutlak yang sama, dan sebaliknya. Lawan dari 'a' adalah '-a'. Lawan dari '-b' adalah 'b'. (Contoh: Lawan dari 5 adalah -5. Lawan dari -9 adalah 9).</li>
+            <li><strong>Membandingkan:</strong> Menggunakan simbol >, <, atau =. Pada garis bilangan, bilangan di sebelah kanan selalu lebih besar dari bilangan di sebelah kirinya. (Contoh: -2 > -5; 3 > -1; -4 < 0).</li>
+            <li><strong>Mengurutkan:</strong> Menyusun beberapa bilangan bulat dari yang terkecil ke terbesar, atau sebaliknya, dengan memperhatikan posisi mereka pada garis bilangan.</li>
+        </ul>
+
+        <h3>1.3 Penjumlahan Bilangan Bulat</h3>
+        <ul>
+            <li><strong>Menggunakan Garis Bilangan:</strong>
+                <ul>
+                    <li>Bilangan positif: bergerak ke kanan.</li>
+                    <li>Bilangan negatif: bergerak ke kiri.</li>
+                    <li>Operasi '+': melanjutkan gerakan.</li>
+                </ul>
+                (Contoh: 3 + (-5). Dari 0 bergerak 3 langkah ke kanan ke +3. Kemudian dari +3 bergerak 5 langkah ke kiri, berakhir di -2. Jadi 3 + (-5) = -2).
+            </li>
+            <li><strong>Aturan Penjumlahan (Tanpa Garis Bilangan):</strong>
+                <ul>
+                    <li>Positif + Positif = Positif (jumlahkan angkanya). Contoh: 7 + 5 = 12.</li>
+                    <li>Negatif + Negatif = Negatif (jumlahkan angkanya, hasilnya negatif). Contoh: (-4) + (-6) = -10.</li>
+                    <li>Positif + Negatif (atau sebaliknya): Kurangkan angka yang lebih besar dengan yang lebih kecil. Tanda hasil mengikuti angka yang lebih besar. Contoh: 8 + (-3) = 5 (karena 8-3=5, dan 8 lebih besar dari 3, tandanya positif). Contoh: (-9) + 4 = -5 (karena 9-4=5, dan 9 lebih besar dari 4, tandanya negatif).</li>
+                    <li>Penjumlahan dengan nol: a + 0 = a.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>1.4 Pengurangan Bilangan Bulat</h3>
+        <ul>
+            <li><strong>Konsep Pengurangan:</strong> Mengurangkan suatu bilangan sama artinya dengan menjumlahkan bilangan tersebut dengan lawan pengurangnya. Jadi, <strong>a - b = a + (-b)</strong> dan <strong>a - (-b) = a + b</strong>.</li>
+            <li><strong>Aturan Pengurangan (mengikuti aturan penjumlahan setelah diubah):</strong>
+                <ul>
+                    <li>Contoh: 7 - 3 = 7 + (-3) = 4.</li>
+                    <li>Contoh: 5 - 8 = 5 + (-8) = -3.</li>
+                    <li>Contoh: (-2) - 6 = (-2) + (-6) = -8.</li>
+                    <li>Contoh: (-4) - (-9) = (-4) + 9 = 5.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>1.5 Perkalian Bilangan Bulat</h3>
+        <ul>
+            <li><strong>Aturan Tanda Perkalian:</strong>
+                <ul>
+                    <li>Positif (+) x Positif (+) = Positif (+). Contoh: 4 x 3 = 12.</li>
+                    <li>Negatif (-) x Negatif (-) = Positif (+). Contoh: (-5) x (-2) = 10.</li>
+                    <li>Positif (+) x Negatif (-) = Negatif (-). Contoh: 6 x (-3) = -18.</li>
+                    <li>Negatif (-) x Positif (+) = Negatif (-). Contoh: (-7) x 4 = -28.</li>
+                </ul>
+                <strong>Kesimpulan:</strong> Jika tanda sama, hasilnya positif. Jika tanda berbeda, hasilnya negatif.
+            </li>
+            <li>Perkalian dengan nol: a x 0 = 0.</li>
+        </ul>
+
+        <h3>1.6 Pembagian Bilangan Bulat</h3>
+        <ul>
+            <li><strong>Aturan Tanda Pembagian (sama seperti perkalian):</strong>
+                <ul>
+                    <li>Positif (+) : Positif (+) = Positif (+). Contoh: 15 : 3 = 5.</li>
+                    <li>Negatif (-) : Negatif (-) = Positif (+). Contoh: (-20) : (-4) = 5.</li>
+                    <li>Positif (+) : Negatif (-) = Negatif (-). Contoh: 24 : (-6) = -4.</li>
+                    <li>Negatif (-) : Positif (+) = Negatif (-). Contoh: (-18) : 2 = -9.</li>
+                </ul>
+            </li>
+            <li>Pembagian dengan nol tidak terdefinisi. Nol dibagi bilangan (selain nol) hasilnya nol (0 : a = 0, a ≠ 0).</li>
+        </ul>
+
+        <h3>1.7 Operasi Hitung Campuran Bilangan Bulat</h3>
+        <p>Gunakan aturan urutan operasi (sering disingkat KABATAKU atau PEMDAS/BODMAS):</p>
+        <ol>
+            <li><strong>Ku</strong>rung / <strong>Pa</strong>rentheses/<strong>B</strong>rackets: Kerjakan operasi di dalam tanda kurung terlebih dahulu.</li>
+            <li><strong>A</strong>kar dan <strong>Pa</strong>ngkat / <strong>E</strong>xponents/<strong>O</strong>rders: (Biasanya belum mendalam di SD, tapi jika ada).</li>
+            <li><strong>Ka</strong>li dan <strong>Ba</strong>gi / <strong>M</strong>ultiplication and <strong>D</strong>ivision: Kerjakan perkalian dan pembagian secara berurutan dari kiri ke kanan.</li>
+            <li><strong>Ta</strong>mbah dan <strong>Ku</strong>rang / <strong>A</strong>ddition and <strong>S</strong>ubtraction: Kerjakan penjumlahan dan pengurangan secara berurutan dari kiri ke kanan.</li>
+        </ol>
+        
+        <h3>1.8 Menyelesaikan Soal Cerita Bilangan Bulat</h3>
+        <ul>
+            <li><strong>Pahami Soal:</strong> Identifikasi informasi penting dan apa yang ditanyakan.</li>
+            <li><strong>Modelkan ke Kalimat Matematika:</strong> Terjemahkan situasi dalam soal cerita menjadi operasi bilangan bulat.</li>
+            <li><strong>Hitung dengan Benar:</strong> Terapkan aturan operasi bilangan bulat.</li>
+            <li><strong>Periksa Kembali:</strong> Pastikan jawaban masuk akal sesuai konteks soal.</li>
+        </ul>
+
+        <div class="contoh-ilustrasi">
+            <p><strong>Contoh Operasi Campuran:</strong> Hitung -5 + (12 : (-4)) x 2 - 7.<br>
+            Langkah 1 (Kurung/Bagi): 12 : (-4) = -3.<br>
+            Jadi soal menjadi: -5 + (-3) x 2 - 7.<br>
+            Langkah 2 (Kali): (-3) x 2 = -6.<br>
+            Jadi soal menjadi: -5 + (-6) - 7.<br>
+            Langkah 3 (Tambah/Kurang dari kiri ke kanan):<br>
+            -5 + (-6) = -11.<br>
+            -11 - 7 = -11 + (-7) = -18.<br>
+            <strong>Jawaban: -18.</strong></p>
+        </div>
+    </div>
+
+    <div class="materi-section" id="pecahan-desimal-k6">
+        <h2>2. Operasi Hitung Pecahan dan Desimal (Aplikasi Lanjutan)</h2>
+        <p>Pemahaman tentang pecahan dan desimal akan dimantapkan dengan operasi hitung yang lebih kompleks dan aplikasinya dalam berbagai soal cerita. Ini mencakup semua bentuk pecahan: biasa, campuran, desimal, dan persen.</p>
+
+        <h3>2.1 Penjumlahan dan Pengurangan Berbagai Bentuk Pecahan (Lanjutan)</h3>
+        <ul>
+            <li><strong>Strategi Umum:</strong> Untuk operasi yang melibatkan berbagai bentuk pecahan, seringkali lebih mudah untuk mengubah semua pecahan ke satu bentuk yang sama (misalnya, semua menjadi pecahan biasa atau semua menjadi desimal) sebelum dioperasikan.</li>
+            <li><strong>Melibatkan Tiga Pecahan atau Lebih:</strong> Terapkan operasi secara bertahap atau samakan penyebut dari semua pecahan (jika menggunakan pecahan biasa).</li>
+            <li><strong>Soal Cerita Kompleks:</strong> Melibatkan beberapa langkah atau informasi yang perlu diolah terlebih dahulu.</li>
+        </ul>
+
+        <h3>2.2 Perkalian Berbagai Bentuk Pecahan (Lanjutan)</h3>
+        <ul>
+            <li><strong>Perkalian Tiga Pecahan atau Lebih:</strong> Kalikan semua pembilang, dan kalikan semua penyebut. Sederhanakan jika memungkinkan sebelum atau sesudah mengalikan.</li>
+            <li><strong>Perkalian yang Melibatkan Bilangan Bulat, Pecahan Biasa, Campuran, Desimal, dan Persen:</strong> Ubah ke bentuk pecahan biasa atau desimal untuk mempermudah.</li>
+        </ul>
+
+        <h3>2.3 Pembagian Berbagai Bentuk Pecahan (Lanjutan)</h3>
+        <ul>
+            <li><strong>Strategi Umum Pembagian Pecahan:</strong> Ubah operasi pembagian menjadi perkalian dengan kebalikan dari pecahan pembagi.</li>
+            <li><strong>Pembagian yang Melibatkan Bilangan Bulat, Pecahan Biasa, Campuran, Desimal, dan Persen:</strong> Ubah ke bentuk pecahan biasa atau desimal.</li>
+        </ul>
+
+        <h3>2.4 Operasi Hitung Campuran Berbagai Bentuk Pecahan</h3>
+        <ul>
+            <li>Wajib mengikuti urutan operasi KABATAKU/PEMDAS.</li>
+            <li>Ubah semua bentuk pecahan ke satu jenis yang paling mudah dioperasikan untuk soal tersebut.</li>
+            <li>Teliti dalam setiap langkah perhitungan.</li>
+        </ul>
+        
+        <h3>2.5 Mengurutkan Berbagai Bentuk Pecahan</h3>
+        <ul>
+            <li><strong>Strategi:</strong> Ubah semua pecahan ke dalam satu bentuk yang sama (misalnya, semua menjadi desimal atau semua menjadi pecahan biasa dengan penyebut yang sama).</li>
+            <li>Kemudian urutkan dari yang terkecil ke terbesar, atau sebaliknya.</li>
+        </ul>
+
+        <h3>2.6 Aplikasi Pecahan dalam Soal Cerita Kompleks</h3>
+        <ul>
+            <li><strong>Perbandingan:</strong> Soal yang melibatkan perbandingan bagian terhadap keseluruhan atau antar bagian.</li>
+            <li><strong>Skala:</strong> Menggunakan pecahan dalam representasi skala.</li>
+            <li><strong>Persentase Keuntungan/Kerugian, Diskon:</strong> Menghitung nilai persen dari suatu jumlah, atau sebaliknya.</li>
+            <li>Memerlukan analisis mendalam untuk menerjemahkan soal cerita ke dalam model matematika yang tepat.</li>
+        </ul>
+
+        <div class="contoh-ilustrasi">
+            <p><strong>Contoh Operasi Campuran Pecahan:</strong> Hitung 0,5 + (<sup>3</sup>/<sub>4</sub> x 20%) : <sup>1</sup>/<sub>2</sub>.<br>
+            Ubah ke satu bentuk, misal pecahan biasa:<br>
+            0,5 = <sup>1</sup>/<sub>2</sub>; 20% = <sup>20</sup>/<sub>100</sub> = <sup>1</sup>/<sub>5</sub>.<br>
+            Soal menjadi: <sup>1</sup>/<sub>2</sub> + (<sup>3</sup>/<sub>4</sub> x <sup>1</sup>/<sub>5</sub>) : <sup>1</sup>/<sub>2</sub>.<br>
+            Langkah 1 (Kurung/Kali): <sup>3</sup>/<sub>4</sub> x <sup>1</sup>/<sub>5</sub> = <sup>3</sup>/<sub>20</sub>.<br>
+            Soal menjadi: <sup>1</sup>/<sub>2</sub> + <sup>3</sup>/<sub>20</sub> : <sup>1</sup>/<sub>2</sub>.<br>
+            Langkah 2 (Bagi): <sup>3</sup>/<sub>20</sub> : <sup>1</sup>/<sub>2</sub> = <sup>3</sup>/<sub>20</sub> x <sup>2</sup>/<sub>1</sub> = <sup>6</sup>/<sub>20</sub> = <sup>3</sup>/<sub>10</sub>.<br>
+            Soal menjadi: <sup>1</sup>/<sub>2</sub> + <sup>3</sup>/<sub>10</sub>.<br>
+            Langkah 3 (Tambah): <sup>1</sup>/<sub>2</sub> (ubah jadi <sup>5</sup>/<sub>10</sub>) + <sup>3</sup>/<sub>10</sub> = <sup>8</sup>/<sub>10</sub> = <sup>4</sup>/<sub>5</sub>.<br>
+            <strong>Jawaban: <sup>4</sup>/<sub>5</sub> atau 0,8 atau 80%.</strong></p>
+        </div>
+    </div>
+
+    <div class="materi-section" id="bangun-ruang-k6">
+        <h2>3. Bangun Ruang (Luas Permukaan, Volume, Gabungan) <i class="fas fa-cube"></i><i class="fas fa-play"></i></h2>
+        <p>Kita akan memperdalam pengetahuan tentang bangun ruang, tidak hanya volumenya tetapi juga luas permukaannya. Beberapa bangun ruang baru seperti prisma dan tabung juga akan kita pelajari volumenya.</p>
+
+        <h3>3.1 Sifat-sifat dan Jaring-jaring Bangun Ruang (Review & Pemantapan)</h3>
+        <ul>
+            <li><strong>Kubus:</strong> 6 sisi persegi sama besar, 12 rusuk sama panjang, 8 titik sudut.</li>
+            <li><strong>Balok:</strong> 6 sisi persegi panjang (atau 4 persegi panjang dan 2 persegi), 3 pasang sisi sejajar dan sama besar, 12 rusuk (3 kelompok ukuran), 8 titik sudut.</li>
+            <li>Membuat dan mengidentifikasi berbagai jaring-jaring kubus dan balok.</li>
+        </ul>
+
+        <h3>3.2 Luas Permukaan Kubus dan Balok</h3>
+        <ul>
+            <li><strong>Luas Permukaan:</strong> Jumlah luas seluruh sisi yang menyelimuti bangun ruang.</li>
+            <div class="rumus-box">Luas Permukaan Kubus (L) = 6 &times; luas sisi = 6 &times; (sisi &times; sisi) = 6s²</div>
+            <div class="rumus-box">Luas Permukaan Balok (L) = 2 &times; (panjang &times; lebar + panjang &times; tinggi + lebar &times; tinggi) = 2(pl + pt + lt)</div>
+        </ul>
+
+        <h3>3.3 Volume Kubus dan Balok (Review & Aplikasi)</h3>
+        <div class="rumus-box">Volume Kubus (V) = sisi &times; sisi &times; sisi = s³</div>
+        <div class="rumus-box">Volume Balok (V) = panjang &times; lebar &times; tinggi = p &times; l &times; t</div>
+        <ul>
+            <li>Menyelesaikan soal cerita yang melibatkan volume, misalnya mengisi bak air, menentukan kapasitas kotak.</li>
+        </ul>
+        
+        <h3>3.4 Sifat-sifat dan Jaring-jaring Prisma Segitiga dan Tabung</h3>
+        <ul>
+            <li><strong>Prisma Segitiga:</strong> Alas dan tutup berbentuk segitiga yang sama besar dan sejajar. Sisi tegak berbentuk persegi panjang. Memiliki 5 sisi, 9 rusuk, 6 titik sudut.</li>
+            <li><strong>Tabung (Silinder):</strong> Alas dan tutup berbentuk lingkaran yang sama besar dan sejajar. Sisi lengkung (selimut tabung) berbentuk persegi panjang jika dibuka. Memiliki 3 sisi (2 lingkaran, 1 selimut), 2 rusuk lengkung, tidak memiliki titik sudut (namun ada pertemuan sisi).</li>
+            <li>Menggambar dan membuat jaring-jaring prisma segitiga dan tabung.</li>
+        </ul>
+
+        <h3>3.5 Volume Prisma Segitiga</h3>
+        <ul>
+            <li>Alas prisma adalah segitiga, jadi Luas Alas = <sup>1</sup>/<sub>2</sub> &times; alas segitiga &times; tinggi segitiga.</li>
+            <div class="rumus-box">Volume Prisma Segitiga (V) = Luas Alas &times; Tinggi Prisma</div>
+        </ul>
+        
+        <h3>3.6 Volume Tabung</h3>
+        <ul>
+            <li>Alas tabung adalah lingkaran, jadi Luas Alas = &pi; &times; jari-jari &times; jari-jari = &pi;r². (Gunakan &pi; &approx; <sup>22</sup>/<sub>7</sub> atau 3,14).</li>
+            <div class="rumus-box">Volume Tabung (V) = Luas Alas &times; Tinggi Tabung = &pi;r²t</div>
+        </ul>
+
+        <h3>3.7 (Opsional) Volume Gabungan Dua Bangun Ruang Sederhana</h3>
+        <ul>
+            <li>Mengidentifikasi bangun-bangun ruang penyusunnya.</li>
+            <li>Menghitung volume masing-masing bangun ruang.</li>
+            <li>Menjumlahkan volume bangun-bangun tersebut.</li>
+            <li>Contoh: Volume rumah mainan yang terdiri dari balok (badan rumah) dan prisma segitiga (atap).</li>
+        </ul>
+
+        <h3>3.8 Menyelesaikan Soal Cerita Luas Permukaan dan Volume</h3>
+        <ul>
+            <li>Memahami konteks soal: apakah yang ditanyakan luas bahan yang dibutuhkan (luas permukaan) atau isi/kapasitas (volume).</li>
+            <li>Menerapkan rumus yang tepat dan teliti dalam perhitungan.</li>
+        </ul>
+        
+        <div class="contoh-ilustrasi">
+            <p><strong>Contoh Luas Permukaan Balok:</strong> Balok dengan p=10 cm, l=5 cm, t=4 cm.<br>
+            L = 2 x ((10x5) + (10x4) + (5x4))<br>
+            L = 2 x (50 + 40 + 20)<br>
+            L = 2 x 110 = 220 cm².</p>
+            <p><strong>Contoh Volume Tabung:</strong> Tabung dengan jari-jari alas 7 cm dan tinggi 10 cm. (&pi; = <sup>22</sup>/<sub>7</sub>)<br>
+            V = (<sup>22</sup>/<sub>7</sub> &times; 7 cm &times; 7 cm) &times; 10 cm<br>
+            V = (22 &times; 7 cm²) &times; 10 cm<br>
+            V = 154 cm² &times; 10 cm = 1.540 cm³.</p>
+        </div>
+    </div>
+
+    <div class="materi-section" id="pengolahan-data-k6">
+        <h2>4. Pengolahan Data (Statistika Lanjut) <i class="fas fa-chart-line"></i></h2>
+        <p>Di era informasi ini, kemampuan mengolah dan memahami data sangatlah penting. Kita akan belajar cara mengumpulkan, menyajikan, dan menafsirkan data, serta menghitung ukuran pemusatan data seperti rata-rata, median, dan modus.</p>
+
+        <h3>4.1 Mengumpulkan dan Menyajikan Data</h3>
+        <ul>
+            <li><strong>Cara Mengumpulkan Data:</strong> Pengamatan langsung (observasi), wawancara, menyebar angket (kuesioner sederhana), atau dari sumber yang sudah ada.</li>
+            <li><strong>Menyajikan Data dalam Tabel Frekuensi:</strong> Mengelompokkan data dan menghitung berapa kali setiap data muncul (frekuensi).</li>
+            <li><strong>Menyajikan Data dalam Diagram Batang:</strong>
+                <ul>
+                    <li>Diagram Batang Tunggal: Untuk satu jenis data.</li>
+                    <li>Diagram Batang Ganda: Untuk membandingkan dua jenis data atau lebih dalam satu kategori.</li>
+                    <li>Langkah pembuatan: Menentukan sumbu horizontal (kategori) dan vertikal (frekuensi/jumlah), membuat skala yang sesuai, menggambar batang sesuai frekuensi.</li>
+                </ul>
+            </li>
+            <li><strong>Menyajikan Data dalam Diagram Garis:</strong> Biasanya digunakan untuk menunjukkan perubahan data dari waktu ke waktu. Langkahnya mirip diagram batang, tetapi titik-titik data dihubungkan dengan garis.</li>
+            <li><strong>Menyajikan Data dalam Diagram Lingkaran:</strong>
+                <ul>
+                    <li>Menunjukkan proporsi setiap bagian data terhadap keseluruhan.</li>
+                    <li>Dalam Derajat: Total satu lingkaran = 360°. Besar sudut setiap bagian = (Frekuensi bagian / Total Frekuensi) &times; 360°.</li>
+                    <li>Dalam Persen: Total satu lingkaran = 100%. Persentase setiap bagian = (Frekuensi bagian / Total Frekuensi) &times; 100%.</li>
+                    <li>Menggunakan busur derajat untuk menggambar sektor-sektornya.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>4.2 Membaca dan Menafsirkan Data dari Berbagai Bentuk Diagram</h3>
+        <ul>
+            <li>Mengambil informasi spesifik dari tabel atau diagram.</li>
+            <li>Membandingkan data antar kategori atau antar waktu.</li>
+            <li>Mengidentifikasi tren atau pola dalam data (misalnya, kenaikan, penurunan).</li>
+            <li>Membuat kesimpulan atau prediksi sederhana berdasarkan data yang disajikan.</li>
+        </ul>
+
+        <h3>4.3 Menentukan Nilai Tertinggi, Terendah, dan Jangkauan Data</h3>
+        <ul>
+            <li><strong>Nilai Tertinggi (Maksimum):</strong> Data dengan nilai paling besar.</li>
+            <li><strong>Nilai Terendah (Minimum):</strong> Data dengan nilai paling kecil.</li>
+            <li><strong>Jangkauan (Range):</strong> Selisih antara nilai tertinggi dan nilai terendah.</li>
+        </ul>
+
+        <h3>4.4 Menghitung Rata-rata (Mean)</h3>
+        <div class="rumus-box">Mean = (Jumlah Semua Data) / (Banyaknya Data)</div>
+        <ul>
+            <li>Untuk data tunggal: Jumlahkan semua nilai data, lalu bagi dengan banyaknya data.</li>
+            <li>Untuk data dalam tabel frekuensi: Kalikan setiap nilai data dengan frekuensinya, jumlahkan hasilnya, lalu bagi dengan total frekuensi.</li>
+        </ul>
+
+        <h3>4.5 Menentukan Median (Nilai Tengah)</h3>
+        <ul>
+            <li><strong>Langkah Pertama:</strong> Urutkan data dari yang terkecil hingga terbesar.</li>
+            <li><strong>Jika Banyaknya Data (n) Ganjil:</strong> Median adalah data yang terletak tepat di tengah setelah diurutkan. (Posisi median = (n+1)/2).</li>
+            <li><strong>Jika Banyaknya Data (n) Genap:</strong> Median adalah rata-rata dari dua data yang terletak di tengah setelah diurutkan. (Posisi median antara data ke-n/2 dan data ke-(n/2)+1).</li>
+        </ul>
+        
+        <h3>4.6 Menentukan Modus (Nilai yang Paling Sering Muncul)</h3>
+        <ul>
+            <li>Cari data yang memiliki frekuensi kemunculan paling tinggi.</li>
+            <li>Suatu kumpulan data bisa tidak memiliki modus (jika semua data muncul sama banyak), memiliki satu modus (unimodal), atau lebih dari satu modus (bimodal, multimodal).</li>
+        </ul>
+
+        <h3>4.7 Memecahkan Masalah Sehari-hari yang Berkaitan dengan Pengolahan Data</h3>
+        <ul>
+            <li>Menganalisis data hasil ulangan siswa, data penjualan, data tinggi badan, dll.</li>
+            <li>Menggunakan mean, median, atau modus untuk menggambarkan karakteristik kumpulan data.</li>
+        </ul>
+
+        <div class="table-container">
+            <p><strong>Contoh Tabel Frekuensi Nilai Ulangan Matematika:</strong></p>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Nilai</th>
+                        <th>Frekuensi (f)</th>
+                        <th>Nilai x Frekuensi (x*f)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>60</td>
+                        <td>3</td>
+                        <td>180</td>
+                    </tr>
+                    <tr>
+                        <td>70</td>
+                        <td>5</td>
+                        <td>350</td>
+                    </tr>
+                    <tr>
+                        <td>80</td>
+                        <td>8</td>
+                        <td>640</td>
+                    </tr>
+                    <tr>
+                        <td>90</td>
+                        <td>4</td>
+                        <td>360</td>
+                    </tr>
+                    <tr>
+                        <td>100</td>
+                        <td>2</td>
+                        <td>200</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td><strong>22</strong></td>
+                        <td><strong>1730</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+            <p>Dari tabel di atas, kita bisa menghitung:</p>
+            <ul>
+                <li><strong>Mean:</strong> 1730 / 22 &approx; 78,64</li>
+                <li><strong>Median:</strong> Data ke-(22/2) = data ke-11 dan data ke-((22/2)+1) = data ke-12. Jika diurutkan, data ke-11 dan ke-12 adalah 80. Jadi Median = (80+80)/2 = 80.</li>
+                <li><strong>Modus:</strong> Nilai 80 (muncul 8 kali, paling banyak).</li>
+            </ul>
+        </div>
+    </div>
+
+    </main>
+
+  <footer>
+    &copy; 2025 SiPintar Net - Belajar Jadi Asyik
+  </footer>
+</body>
+</html>
